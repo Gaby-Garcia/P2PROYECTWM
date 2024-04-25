@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Proyect2DAM.Api.props" />
+</Project>

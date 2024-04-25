@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "1Ehz+in5Atvptg24hnTsGnC0oailtMQYLEbJcafOaO5rlcFXkhD93sgoX8kUqFkgk5+kvHaH00ka6N/gR7ThYw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gabyg\\Desktop\\PROYECT2DAM\\Tecnm.Ecommerce\\Tecnm.Ecommerce\\Proyect2TWM.Core\\Proyect2TWM.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gabyg\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\gabyg\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
+    "C:\\Users\\gabyg\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\gabyg\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
+    "C:\\Users\\gabyg\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\gabyg\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\gabyg\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

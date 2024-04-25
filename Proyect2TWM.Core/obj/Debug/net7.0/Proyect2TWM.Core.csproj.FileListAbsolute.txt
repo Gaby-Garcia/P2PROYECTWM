@@ -1,0 +1,12 @@
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\bin\Debug\net7.0\Proyect2TWM.Core.deps.json
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\bin\Debug\net7.0\Proyect2TWM.Core.dll
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\bin\Debug\net7.0\Proyect2TWM.Core.pdb
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\Proyect2TWM.Core.csproj.AssemblyReference.cache
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\Proyect2TWM.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\Proyect2TWM.Core.AssemblyInfoInputs.cache
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\Proyect2TWM.Core.AssemblyInfo.cs
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\Proyect2TWM.Core.csproj.CoreCompileInputs.cache
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\Proyect2TWM.Core.dll
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\refint\Proyect2TWM.Core.dll
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\Proyect2TWM.Core.pdb
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\ref\Proyect2TWM.Core.dll
