@@ -1,0 +1,39 @@
+﻿@page
+@model Proyect3TWN.WebSite.Pages.Employees.List
+
+<h1>Employees</h1>
+<div class="container-fluid-employees">
+    <form method="get">
+        <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <br/>
+                <button id="btnSearch" class="btn btn-primary mr-3">Search</button>
+                <a asp-page="/Employees/Add" class="btn btn-success">Add New</a>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        @foreach (var employee in Model.employee)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card-employee">
+                    <div class="card-body-employee">
+                        <h5 class="card-title-employee">@employee.Name @employee.LastName</h5>
+                        <p class="card-text-employee"><strong>Birth Date:</strong> @employee.BirthDate</p>
+                        <p class="card-text-employee"><strong>Gender:</strong> @employee.Gender</p>
+                        <p class="card-text-employee"><strong>Address:</strong> @employee.Address</p>
+                        <p class="card-text-employee"><strong>Phone:</strong> @employee.Phone</p>
+                        <p class="card-text-employee"><strong>Email:</strong> @employee.Email</p>
+                        <p class="card-text-employee"><strong>Department ID:</strong> @employee.ID_Department</p>
+                        <div class="btn-group" role="group" aria-label="Options">
+                            <a asp-page="/Employees/Edit" asp-route-id="@employee.id" class="btn btn-primary">Edit</a>
+                            <a asp-page="/Employees/Delete" asp-route-id="@employee.id" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

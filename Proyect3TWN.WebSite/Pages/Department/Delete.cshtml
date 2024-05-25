@@ -1,0 +1,35 @@
+﻿@page "{id:int}"
+@model Proyect3TWN.WebSite.Pages.Department.Delete
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2>Delete Product Category</h2>
+            <form method="post">
+                <input type="hidden" asp-for="DepartmentDto.id" />
+                <div class="form-group">
+                    <label asp-for="DepartmentDto.Name"></label>
+                    <input readonly asp-for="DepartmentDto.Name" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="DepartmentDto.Description"></label>
+                    <input readonly asp-for="DepartmentDto.Description" class="form-control" maxlength="100" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="DepartmentDto.Supervisor"></label>
+                    <input asp-for="DepartmentDto.Supervisor" class="form-control" maxlength="100"/>
+                    <span class="text-danger" asp-validation-for="DepartmentDto.Supervisor"></span>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary mr-3">Delete</button>
+                        <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

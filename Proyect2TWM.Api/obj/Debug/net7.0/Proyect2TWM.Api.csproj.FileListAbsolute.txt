@@ -37,3 +37,5 @@ C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.A
 C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Api\obj\Debug\net7.0\Proyect2TWM.Api.pdb
 C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Api\obj\Debug\net7.0\Proyect2TWM.Api.genruntimeconfig.cache
 C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Api\obj\Debug\net7.0\ref\Proyect2TWM.Api.dll
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Api\obj\Debug\net7.0\Proyect2TWM.Api.sourcelink.json
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Api\bin\Debug\net7.0\Newtonsoft.Json.dll

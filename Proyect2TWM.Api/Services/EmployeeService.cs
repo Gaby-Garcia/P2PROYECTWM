@@ -85,4 +85,10 @@ public class EmployeeService : IEmployeesService
             var employeesDto = new EmployeesDto(employee);
             return employeesDto;
         }
+        
+        public async Task<bool> ExistByName(string name, int id = 0)
+        {
+            var employee = await _employeesRepository.GetByName(name, id);
+            return employee != null;
+        }
 }

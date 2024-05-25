@@ -50,14 +50,6 @@ public class VacationsAbsencesController : ControllerBase
             return BadRequest(responseError);
         }
 
-        if (vacationsAbsencesDto.id == 0)
-        {
-            var responseError = new Response<VacationsAbsences>
-            {
-                Errors = new List<string> { "El ID no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
 
         if (vacationsAbsencesDto.ID_Employee == 0)
         {
@@ -122,14 +114,6 @@ public class VacationsAbsencesController : ControllerBase
             return BadRequest(responseError);
         }
 
-        if (vacationsAbsencesDto.id == 0)
-        {
-            var responseError = new Response<VacationsAbsences>
-            {
-                Errors = new List<string> { "El ID no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
 
         if (vacationsAbsencesDto.ID_Employee == 0)
         {

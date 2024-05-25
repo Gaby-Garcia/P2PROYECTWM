@@ -100,14 +100,7 @@ public class EmployeesController : ControllerBase
             };
             return BadRequest(responseError);
         }
-        if (employeesDto.id == 0)
-        {
-            var responseError = new Response<Employee>
-            {
-                Errors = new List<string> { "El ID del empleado no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
+
 
         if (employeesDto.ID_Department == 0)
         {
@@ -137,11 +130,15 @@ public class EmployeesController : ControllerBase
             return BadRequest(responseError);
         }
 
-        var response = new Response<EmployeesDto>()
-        {
-            Data = await _employeesService.SaveAsycnE(employeesDto)
-        };
+        var response = new Response<EmployeesDto>();
 
+        if (await _employeesService.ExistByName(employeesDto.Name))
+        {
+            response.Errors.Add($"Employee Name {employeesDto.Name} already exist");
+            return BadRequest(response);
+        }
+
+        response.Data = await _employeesService.SaveAsycnE(employeesDto);
         return Created($"/api/[controller]/{response.Data.id}", response);
     }
 
@@ -210,15 +207,6 @@ public class EmployeesController : ControllerBase
             };
             return BadRequest(responseError);
         }
-        if (employeesDto.id == 0)
-        {
-            var responseError = new Response<Employee>
-            {
-                Errors = new List<string> { "El ID del empleado no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
-
         if (employeesDto.ID_Department == 0)
         {
             var responseError = new Response<Employee>
@@ -252,6 +240,12 @@ public class EmployeesController : ControllerBase
         {
             response.Errors.Add("Employee not found");
             return NotFound(response);
+        }
+        
+        if (await _employeesService.ExistByName(employeesDto.Name, employeesDto.id))
+        {
+            response.Errors.Add($"Employee Name {employeesDto.Name} already exist");
+            return BadRequest(response);
         }
 
         response.Data = await _employeesService.UpdateAsyncE(employeesDto);

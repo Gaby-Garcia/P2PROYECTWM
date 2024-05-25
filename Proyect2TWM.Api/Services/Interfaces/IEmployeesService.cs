@@ -16,4 +16,6 @@ public interface IEmployeesService
     Task<EmployeesDto> UpdateAsyncE(EmployeesDto employeesDto);
 
     Task<bool> DeleteAsyncE(int id);
+    
+    Task<bool> ExistByName(string name, int id = 0);
 }

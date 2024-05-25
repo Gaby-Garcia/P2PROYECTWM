@@ -17,4 +17,6 @@ public interface IPerfomanceReviewsService
     Task<PerfomanceReviewsDto> UpdateAsyncPR(PerfomanceReviewsDto perfomanceReviews);
 
     Task<bool> DeleteAsyncPR(int id);
+    
+    Task<bool> ExistByName(string name, int id = 0);
 }

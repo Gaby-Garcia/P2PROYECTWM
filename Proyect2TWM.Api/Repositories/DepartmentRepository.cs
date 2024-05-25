@@ -7,7 +7,7 @@ using Proyect2TWM.Api.Repositories.Interfecies;
 
 namespace Proyect2TWM.Api.Repositories;
 
-public class DepartmentRepository : IDepartmentRespository
+public class    DepartmentRepository : IDepartmentRespository
 {
     private readonly IDbContext _dbContext;
 
@@ -52,5 +52,11 @@ public class DepartmentRepository : IDepartmentRespository
         if (department == null)
             return null;
         return department.IsDeleted == true ? null : department;
+    }
+    public  async Task<Department> GetByName(string name, int id = 0)
+    {
+        string sql = $"SELECT * FROM Department WHERE Name = '{name}' AND id <> {id}";
+        var departments = await _dbContext.Connection.QueryAsync<Department>(sql);
+        return departments.ToList().FirstOrDefault();
     }
 }

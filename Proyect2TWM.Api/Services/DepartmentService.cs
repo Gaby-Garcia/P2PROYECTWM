@@ -75,4 +75,10 @@ public class DepartmentService : IDepartmentService
         var departmentDto = new DepartmentDto(department);
         return departmentDto;
     }
+    
+    public async Task<bool> ExistByName(string name, int id = 0)
+    {
+        var department = await _departmentRespository.GetByName(name, id);
+        return department != null;
+    }
 }

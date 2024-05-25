@@ -13,4 +13,6 @@ public interface IEmploymentHistoryRepository
     Task<bool> DeleteAsyncEH(int id);
     
     Task<Employment_History> GetByIdEH(int id);
+    
+    Task<Employment_History> GetByCompanyName(string companyName, int id = 0);
 }

@@ -79,4 +79,10 @@ public class PerfomanceReviewsService: IPerfomanceReviewsService
         var perfomanceReviewDto = new PerfomanceReviewsDto(perfomanceReview);
         return perfomanceReviewDto;
     }
+    
+    public async Task<bool> ExistByName(string name, int id = 0)
+    {
+        var perfomance = await _perfomanceReviews.GetByName(name, id);
+        return perfomance != null;
+    }
 }

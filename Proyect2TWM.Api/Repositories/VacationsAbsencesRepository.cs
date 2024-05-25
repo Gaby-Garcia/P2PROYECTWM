@@ -8,7 +8,6 @@ namespace Proyect2TWM.Api.Repositories;
 
 public class VacationsAbsencesRepository : IVacationsAbsencesRepository
 {
-    //Se prepara la clase para saber que se estara trabajando con una base de datos 
     private readonly IDbContext _dbContext;
 
     public VacationsAbsencesRepository(IDbContext context)
@@ -53,4 +52,12 @@ public class VacationsAbsencesRepository : IVacationsAbsencesRepository
             return null;
         return vacationsAbsences.IsDeleted == true ? null : vacationsAbsences;
     }
+    
+    public  async Task<VacationsAbsences> GetByName(string name, int id = 0)
+    {
+        string sql = $"SELECT * FROM VacationsAbsences WHERE Name = '{name}' AND id <> {id}";
+        var vacations = await _dbContext.Connection.QueryAsync<VacationsAbsences>(sql);
+        return vacations.ToList().FirstOrDefault();
+    }
+
 }

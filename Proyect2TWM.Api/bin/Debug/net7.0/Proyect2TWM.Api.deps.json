@@ -12,6 +12,7 @@
           "Dapper.Contrib": "2.0.78",
           "Microsoft.AspNetCore.OpenApi": "7.0.15",
           "MySqlConnector": "2.3.5",
+          "Newtonsoft.Json": "13.0.3",
           "Proyect2TWM.Core": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
@@ -77,6 +78,14 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.5.0": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
@@ -119,7 +128,8 @@
         "dependencies": {
           "Dapper": "2.1.35",
           "Dapper.Contrib": "2.0.78",
-          "MySqlConnector": "2.3.5"
+          "MySqlConnector": "2.3.5",
+          "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
           "Proyect2TWM.Core.dll": {}
@@ -181,6 +191,13 @@
       "sha512": "sha512-AmEfUPkFl+Ev6jJ8Dhns3CYHBfD12RHzGYWuLt6DfG6/af6YvOMyPz74ZPPjBYQGRJkumD2Z48Kqm8s5DJuhLA==",
       "path": "mysqlconnector/2.3.5",
       "hashPath": "mysqlconnector.2.3.5.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.5.0": {
       "type": "package",

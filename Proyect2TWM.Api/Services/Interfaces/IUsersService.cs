@@ -17,5 +17,8 @@ public interface IUsersService
 
     Task<bool> DeleteAsyncU(int id);
     
-    Task<bool> AuthenticateAsync(string email, string password, string username);
+    Task<bool> AuthenticateAsync(string email, string password);
+    
+    Task<bool> ExistByUser(string userName, int id = 0);
+    Task<bool> ExistByEmail(string email, int id = 0);
 }

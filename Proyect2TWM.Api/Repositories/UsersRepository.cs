@@ -9,7 +9,6 @@ namespace Proyect2TWM.Api.Repositories;
 
 public class UsersRepository: IUsersRepository
 {
-    //Se prepara la clase para saber que se estara trabajando con una base de datos 
     private readonly IDbContext _dbContext;
 
     public UsersRepository(IDbContext context)
@@ -54,12 +53,25 @@ public class UsersRepository: IUsersRepository
             return null;
         return users.IsDeleted == true ? null : users;
     }
-    
-    public async Task<Users> GetByEmailAndPasswordAsync(string email, string password, string username)
+
+    public async Task<Users> GetByEmailAndPasswordAsync(string email, string password)
     {
-        const string sql = "SELECT * FROM Users WHERE Email = @Email AND Password = @Password AND UserName = @UserName AND isDeleted = 0";
-        var user = await _dbContext.Connection.QueryFirstOrDefaultAsync<Users>(sql, new { Email = email, Password = password, UserName = username });
+        const string sql = "SELECT * FROM Users WHERE Email = @Email AND Password = @Password AND isDeleted = 0";
+        var user = await _dbContext.Connection.QueryFirstOrDefaultAsync<Users>(sql, new { Email = email, Password = password});
         return user;
     }
 
+    public async Task<Users> GetByName(string userName, int id = 0)
+    {
+        string sql = $"SELECT * FROM Users WHERE UserName = '{userName}' AND id <> {id}";
+        var users = await _dbContext.Connection.QueryAsync<Users>(sql);
+        return users.ToList().FirstOrDefault();
+    }
+    
+    public async Task<Users> GetByEmail(string email, int id = 0)
+    {
+        string sql = $"SELECT * FROM Users WHERE Email = '{email}' AND id <> {id}";
+        var users = await _dbContext.Connection.QueryAsync<Users>(sql);
+        return users.ToList().FirstOrDefault();
+    }
 }

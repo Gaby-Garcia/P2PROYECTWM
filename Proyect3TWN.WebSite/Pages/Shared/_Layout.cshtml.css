@@ -1,0 +1,70 @@
+﻿/* Custom styles for the sidenav menu */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff; /* Blue background */
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav .nav-link {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav .nav-link:hover {
+  color: #000; /* Black text on hover */
+  background-color: #0000; /* Darker blue on hover */
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Navbar styles */
+.navbar-custom {
+  background-color: #007bff; /* Blue background for the header */
+  color: #fff; /* White text for the header */
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  color: #fff; /* White color for the dropdown button */
+}
+
+.navbar-toggler-icon {
+  background-color: #000; /* White color for the icon */
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  color: #000; /* Blue color for the icon when menu is open */
+}
+
+.navbar-toggler:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.navbar .navbar-brand {
+  color: #fff; /* White text for the brand */
+  font-size: 1.25rem; /* Increased font size */
+}
+
+.bi {
+  margin-right: 10px;
+}
+
+/* Add additional custom styles as needed */

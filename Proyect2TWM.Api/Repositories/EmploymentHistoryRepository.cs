@@ -9,7 +9,6 @@ namespace Proyect2TWM.Api.Repositories.Interfecies;
 
 public class EmploymentHistoryRepository : IEmploymentHistoryRepository
 {
-    //Se prepara la clase para saber que se estara trabajando con una base de datos 
     private readonly IDbContext _dbContext;
 
     public EmploymentHistoryRepository(IDbContext context)
@@ -54,5 +53,13 @@ public class EmploymentHistoryRepository : IEmploymentHistoryRepository
             return null;
         return employmentHistory.IsDeleted == true ? null : employmentHistory;
     }
+    
+    public  async Task<Employment_History> GetByCompanyName(string companyName, int id = 0)
+    {
+        string sql = $"SELECT * FROM Employment_History WHERE CompanyName = '{companyName}' AND id <> {id}";
+        var employment = await _dbContext.Connection.QueryAsync<Employment_History>(sql);
+        return employment.ToList().FirstOrDefault();
+    }
+
     
 }

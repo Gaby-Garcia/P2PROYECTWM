@@ -1,0 +1,60 @@
+﻿@page
+@model Proyect3TWN.WebSite.Pages.PerfomanceReviews.Add
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2>Add Perfomance Reviews</h2>
+            <form method="post">
+                <input type="hidden"/>
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.ID_Employee"></label>
+                    <input asp-for="PerfomanceReviewsDto.ID_Employee" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="PerfomanceReviewsDto.ID_Employee"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.EvaluationDate"></label>
+                    <input asp-for="PerfomanceReviewsDto.EvaluationDate" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="PerfomanceReviewsDto.EvaluationDate"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.Clasification"></label>
+                    <input asp-for="PerfomanceReviewsDto.Clasification" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="PerfomanceReviewsDto.Clasification"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.Comments"></label>
+                    <input asp-for="PerfomanceReviewsDto.Comments" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="PerfomanceReviewsDto.Comments"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.Goals"></label>
+                    <input asp-for="PerfomanceReviewsDto.Goals" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="PerfomanceReviewsDto.Goals"></span>
+                </div>
+                
+                   @if (Model.Errors.Count > 0)
+                                    {
+                
+                                        <div class="alert alert-danger" role="alert">
+                                            <ul>
+                                                @foreach (var error in Model.Errors)
+                                                {           
+                                                    <li>@error</li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    }
+                
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary mr-3">Save</button>
+                        <a class="btn btn-secondary"> Cancel </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

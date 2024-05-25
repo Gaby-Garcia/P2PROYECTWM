@@ -1,0 +1,36 @@
+﻿/* custom.css */
+
+body {
+    background-color: #f0f8ff; /* AliceBlue background for the whole page */
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    color: #007bff;
+}
+
+.login-container .form-label {
+    color: #495057;
+}
+
+.login-container .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.login-container .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.login-container .alert-danger {
+    margin-top: 20px;
+}

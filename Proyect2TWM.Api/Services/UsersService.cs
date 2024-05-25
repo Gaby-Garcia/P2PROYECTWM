@@ -24,7 +24,7 @@ public class UsersService : IUsersService
     {
         var users = new Users
         {
-            UserName  = usersDto.UserName,
+            UserName = usersDto.UserName,
             Email = usersDto.Email,
             Password = usersDto.Password,
             CreatedBy = "Gaby-Garcia",
@@ -43,7 +43,6 @@ public class UsersService : IUsersService
         var users = await _usersRepository.GetByIdUser(usersDto.id);
         if (users == null)
             throw new Exception("User Not Found");
-        
         users.UserName = usersDto.UserName;
         users.Email = usersDto.Email;
         users.Password = usersDto.Password;
@@ -65,6 +64,7 @@ public class UsersService : IUsersService
     {
         return await _usersRepository.DeleteAsyncUser(id);
     }
+    
 
     public async Task<UsersDto> GetByIdU(int id)
     {
@@ -76,9 +76,24 @@ public class UsersService : IUsersService
         return userDto;
     }
     
-    public async Task<bool> AuthenticateAsync(string email, string password, string username)
+    public async Task<bool> AuthenticateAsync(string email, string password)
     {
-        var user = await _usersRepository.GetByEmailAndPasswordAsync(email, password, username);
+        var user = await _usersRepository.GetByEmailAndPasswordAsync(email, password);
+        return user != null;
+
+    }
+    
+    public async Task<bool> ExistByUser(string userName, int id = 0)
+    {
+        var user = await _usersRepository.GetByName(userName, id);
         return user != null;
     }
-}
+    
+    
+    public async Task<bool> ExistByEmail(string email, int id = 0)
+    {
+        var user = await _usersRepository.GetByEmail(email, id);
+        return user != null;
+    }
+
+} 

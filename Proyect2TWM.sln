@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyect2TWM.Tests", "Proyec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyect2TWM.Api", "Proyect2TWM.Api\Proyect2TWM.Api.csproj", "{69E11B18-C97E-41CC-99F0-032CB493BD3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyect3TWN.WebApp", "Proyect3TWN.WebApp\Proyect3TWN.WebApp.csproj", "{4C1FEDC7-4F50-4B07-A88E-83BE372EE4FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyect3TWN.WebSite", "Proyect3TWN.WebSite\Proyect3TWN.WebSite.csproj", "{1E756834-867C-40B2-A645-40551E958BC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{69E11B18-C97E-41CC-99F0-032CB493BD3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69E11B18-C97E-41CC-99F0-032CB493BD3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69E11B18-C97E-41CC-99F0-032CB493BD3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C1FEDC7-4F50-4B07-A88E-83BE372EE4FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1FEDC7-4F50-4B07-A88E-83BE372EE4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1FEDC7-4F50-4B07-A88E-83BE372EE4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1FEDC7-4F50-4B07-A88E-83BE372EE4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E756834-867C-40B2-A645-40551E958BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E756834-867C-40B2-A645-40551E958BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E756834-867C-40B2-A645-40551E958BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E756834-867C-40B2-A645-40551E958BC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -16,4 +16,6 @@ public interface IPyrollsService
     Task<PayrollsDto> UpdateAsyncP(PayrollsDto payrolls);
 
     Task<bool> DeleteAsyncP(int id);
+    
+    Task<bool> ExistByPaymentDate(string paymentDate, int id = 0);
 }

@@ -1,0 +1,35 @@
+﻿@page
+@model Proyect3TWN.WebSite.Pages.Users.List
+
+<h1>Users</h1>
+<div class="container-fluid-users">
+    <form method="get">
+        <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <br/>
+                <button id="btnSearch" class="btn btn-primary mr-3">Search</button>
+                <a asp-page="/Users/Add" class="btn btn-success">Add New</a>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        @foreach (var user in Model.user)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card-user">
+                    <div class="card-body-user">
+                         <p class="card-text-user"><strong>UserName:</strong> @user.UserName</p>
+                        <p class="card-text-user"><strong>Email:</strong> @user.Email</p>
+                        <p class="card-text-user"><strong>Password:</strong> @user.Password</p>
+                        <div class="btn-group" role="group" aria-label="Options">
+                            <a asp-page="/Users/Edit" asp-route-id="@user.id" class="btn btn-primary">Edit</a>
+                            <a asp-page="/Users/Delete" asp-route-id="@user.id" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

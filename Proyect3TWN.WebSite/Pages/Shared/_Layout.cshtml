@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var currentUrl = HttpContextAccessor.HttpContext.Request.Path.Value;
+    bool isLoginPage = currentUrl.Contains("/Login");
+    bool isLoggedIn = HttpContextAccessor.HttpContext.Session.GetString("UserId") != null;
+}
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Proyect3TWN.WebSite</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/Proyect3TWN.WebSite.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="~/css/custom-menu.css"/> <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/ListDepartment.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/ListEmployee.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/ListEmployment.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/ListPyrolls.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/ListUsers.css" asp-append-version="true"/>
+
+</head>
+<body>
+ @if (!isLoginPage)
+    {
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom box-shadow mb-3">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <span class="navbar-brand" style="cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+        </div>
+    </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <nav class="nav flex-column">
+            <a class="nav-link" asp-area="" asp-page="/Index">
+                <i class="bi bi-house-door"></i> Home
+            </a>
+            <a class="nav-link" asp-area="" asp-page="/Users/List">
+                <i class="bi bi-person"></i> Users
+            </a>
+            <a class="nav-link" asp-area="" asp-page="/Employees/List">
+                <i class="bi bi-people"></i> Employees
+            </a>
+            <a class="nav-link" asp-area="" asp-page="/Pyrolls/List">
+                <i class="bi bi-cash-stack"></i> Pyroll
+            </a>
+            <a class="nav-link" asp-area="" asp-page="/Department/List">
+                <i class="bi bi-building"></i> Departments
+            </a>
+            <a class="nav-link" asp-area="" asp-page="/EmploymentHistory/List">
+                <i class="bi bi-file-earmark-text"></i> Employment History
+            </a>
+            <a class="nav-link" asp-area="" asp-page="/VacationsAbsences/List">
+                <i class="bi bi-calendar"></i> Vacations and Absences
+            </a>
+                <a class="nav-link" asp-area="" asp-page="/PerfomanceReviews/List">
+                <i class="bi bi-clipboard"></i> Performance Reviews
+            </a>
+            <a class="nav-link" asp-area="" asp-page="/Login/List">
+                <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+            </a>
+        </nav>
+    </div>
+</header>
+}
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2024 - Proyect3TWN.WebSite - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

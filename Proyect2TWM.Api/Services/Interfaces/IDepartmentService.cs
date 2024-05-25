@@ -16,4 +16,6 @@ public interface IDepartmentService
     Task<DepartmentDto> UpdateAsyncD(DepartmentDto department);
 
     Task<bool> DeleteAsyncD(int id);
+    
+    Task<bool> ExistByName(string name, int id = 0);
 }

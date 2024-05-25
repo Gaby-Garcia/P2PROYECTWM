@@ -1,0 +1,41 @@
+﻿@page "{id:int}"
+@model Proyect3TWN.WebSite.Pages.PerfomanceReviews.Delete
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2>Delete Product Category</h2>
+            <form method="post">
+                <input type="hidden" asp-for="PerfomanceReviewsDto.id" />
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.ID_Employee"></label>
+                    <input readonly asp-for="PerfomanceReviewsDto.ID_Employee" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.EvaluationDate"></label>
+                    <input readonly asp-for="PerfomanceReviewsDto.EvaluationDate" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.Clasification"></label>
+                    <input readonly asp-for="PerfomanceReviewsDto.Clasification" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.Comments"></label>
+                    <input readonly asp-for="PerfomanceReviewsDto.Comments" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PerfomanceReviewsDto.Goals"></label>
+                    <input readonly asp-for="PerfomanceReviewsDto.Goals" class="form-control" maxlength="45" />
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary mr-3">Delete</button>
+                        <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

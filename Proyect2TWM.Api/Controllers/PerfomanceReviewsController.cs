@@ -59,15 +59,6 @@ public class PerfomanceReviewsController : ControllerBase
             };
             return BadRequest(responseError);
         }
-        
-        if (perfomanceReviewsDto.id == 0)
-        {
-            var responseError = new Response<PerfomanceReview>
-            {
-                Errors = new List<string> { "El ID  no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
 
         if (perfomanceReviewsDto.ID_Employee == 0)
         {
@@ -138,15 +129,6 @@ public class PerfomanceReviewsController : ControllerBase
             var responseError = new Response<PerfomanceReview>
             {
                 Errors = new List<string> { "Clasification  no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
-        
-        if (perfomanceReviewsDto.id == 0)
-        {
-            var responseError = new Response<PerfomanceReview>
-            {
-                Errors = new List<string> { "El ID  no puede ser igual a 0." }
             };
             return BadRequest(responseError);
         }

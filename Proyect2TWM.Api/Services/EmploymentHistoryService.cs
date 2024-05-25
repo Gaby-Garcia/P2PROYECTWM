@@ -79,4 +79,10 @@ public class EmploymentHistoryService : IEmploymentHistoryService
         var employmentHistoryDto = new EmploymentHistoryDto(employmentHistory);
         return employmentHistoryDto;
     }
+    
+    public async Task<bool> ExistByCompanyName(string companyName, int id = 0)
+    {
+        var employment = await _employmentHistory.GetByCompanyName(companyName, id);
+        return employment != null;
+    }
 }

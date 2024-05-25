@@ -62,15 +62,6 @@ public class EmploymentHistoryController : ControllerBase
             };
             return BadRequest(responseError);
         }
-        
-        if (employmentHistoryDto.id <= 0)
-        {
-            var responseError = new Response<Employment_History>
-            {
-                Errors = new List<string> { "El ID de Employment History no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
 
         if (employmentHistoryDto.ID_Employee <= 0 )
         {
@@ -84,17 +75,21 @@ public class EmploymentHistoryController : ControllerBase
         //-----------------
         if (!await _employeesService.EmployeeExist(employmentHistoryDto.ID_Employee))
         {
-            var responseError = new Response<Employment_History>
+            var responseError = new Response<Pyrolls>
             {
-                Errors = new List<string> { "El ID del Empleado no existe ." }
+                Errors = new List<string> { "El ID del Empleado no existe no existe." }
             };
             return BadRequest(responseError);
         }
-        var response = new Response<EmploymentHistoryDto>()
-        {
-            Data = await _employmentHistory.SaveAsycnEH(employmentHistoryDto)
-        };
+        var response = new Response<EmploymentHistoryDto>();
 
+        if (await _employmentHistory.ExistByCompanyName(employmentHistoryDto.CompanyName))
+        {
+            response.Errors.Add($"CompanyName {employmentHistoryDto.CompanyName} already exist");
+            return BadRequest(response);
+        }
+
+        response.Data = await _employmentHistory.SaveAsycnEH(employmentHistoryDto);
         return Created($"/api/[controller]/{response.Data.id}", response);
     }
 
@@ -142,15 +137,6 @@ public class EmploymentHistoryController : ControllerBase
             var responseError = new Response<Employment_History>
             {
                 Errors = new List<string> { "La descripcion es obligatoria." }
-            };
-            return BadRequest(responseError);
-        }
-        
-        if (employmentHistoryDto.id <= 0)
-        {
-            var responseError = new Response<Employment_History>
-            {
-                Errors = new List<string> { "El ID de Employment History no puede ser igual a 0." }
             };
             return BadRequest(responseError);
         }

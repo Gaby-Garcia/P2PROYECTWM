@@ -7,7 +7,7 @@ using Proyect2TWM.Api.Services.Interfaces;
 namespace Proyect2TWM.Api.Controllers;
 [ApiController]
 [Route("api/[controller]")]
-public class DepartmentController : ControllerBase
+public class  DepartmentController : ControllerBase
 {
      private readonly IDepartmentService _departmentService;
     
@@ -30,7 +30,6 @@ public class DepartmentController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Response<Department>>> Post([FromBody] DepartmentDto departmentDto)
     {
-        
         // Validar campos de tipo string
         if (departmentDto.Name == "string" || string.IsNullOrWhiteSpace(departmentDto.Name) || departmentDto.Name == "0")
         {
@@ -41,7 +40,7 @@ public class DepartmentController : ControllerBase
             return BadRequest(responseError);
         }
 
-        if (departmentDto.Description == "string"|| string.IsNullOrWhiteSpace(departmentDto.Description) || departmentDto.Description == "0")
+        if (departmentDto.Description == "string"|| string.IsNullOrWhiteSpace(departmentDto.Description)  || departmentDto.Description == "0")
         {
             var responseError = new Response<Department>
             {
@@ -50,7 +49,7 @@ public class DepartmentController : ControllerBase
             return BadRequest(responseError);
         }
 
-        if (departmentDto.Supervisor == "string" || string.IsNullOrWhiteSpace(departmentDto.Supervisor) || departmentDto.Supervisor == "0")
+        if (departmentDto.Supervisor == "string" || string.IsNullOrWhiteSpace(departmentDto.Supervisor)  || departmentDto.Supervisor == "0")
         {
             var responseError = new Response<Department>
             {
@@ -58,22 +57,18 @@ public class DepartmentController : ControllerBase
             };
             return BadRequest(responseError);
         }
+
         
-        if (departmentDto.id == 0)
+        //---
+        var response = new Response<DepartmentDto>();
+
+        if (await _departmentService.ExistByName(departmentDto.Name))
         {
-            var responseError = new Response<Employment_History>
-            {
-                Errors = new List<string> { "El ID de Department no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
+            response.Errors.Add($"Department Name {departmentDto.Name} already exist");
+            return BadRequest(response);
         }
-        
-        //--
-        var response = new Response<DepartmentDto>()
-        {
-            Data = await _departmentService.SaveAsycnD(departmentDto)
-        };
-        
+
+        response.Data = await _departmentService.SaveAsycnD(departmentDto);
         return Created($"/api/[controller]/{response.Data.id}", response);
     }
 
@@ -140,6 +135,12 @@ public class DepartmentController : ControllerBase
         {
             response.Errors.Add("Department not found");
             return NotFound(response);
+        }
+
+        if (await _departmentService.ExistByName(departmentDto.Name, departmentDto.id))
+        {
+            response.Errors.Add($"Department Name {departmentDto.Name} already exist");
+            return BadRequest(response);
         }
 
         response.Data = await _departmentService.UpdateAsyncD(departmentDto);

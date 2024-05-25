@@ -13,4 +13,5 @@ public interface IEmployeesRepository
     Task<bool> DeleteAsyncEmployee(int id);
     
     Task<Employee> GetByIdEmployee(int id);
+    Task<Employee> GetByName(string name, int id = 0);
 }

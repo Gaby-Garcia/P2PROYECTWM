@@ -1,0 +1,35 @@
+﻿@page
+@model Proyect3TWN.WebSite.Pages.Department.ListModel
+
+<h1>Department</h1>
+<div class="container-fluid-department">
+    <form method="get">
+        <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <br/>
+                <button id="btnSearch" class="btn btn-primary mr-3">Search</button>
+                <a asp-page="/Department/Add" class="btn btn-success">Add New</a>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        @foreach (var department in Model.department)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card-department">
+                    <div class="card-body-department">
+                        <h5 class="card-title-department">@department.Name</h5>
+                        <p class="card-text-department"><strong>Description:</strong> @department.Description</p>
+                        <p class="card-text-department"><strong>Supervisor:</strong> @department.Supervisor</p>
+                        <div class="btn-group" role="group" aria-label="Options">
+                            <a asp-area="" asp-page="/Department/Edit" asp-route-id="@department.id" class="btn btn-primary">Edit</a>
+                            <a asp-area="" asp-page="/Department/Delete" asp-route-id="@department.id" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

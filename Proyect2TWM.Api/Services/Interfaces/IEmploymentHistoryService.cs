@@ -16,4 +16,6 @@ public interface IEmploymentHistoryService
     Task<EmploymentHistoryDto> UpdateAsyncEH(EmploymentHistoryDto employmentHistory);
 
     Task<bool> DeleteAsyncEH(int id);
+    
+    Task<bool> ExistByCompanyName(string companyName, int id = 0);
 }

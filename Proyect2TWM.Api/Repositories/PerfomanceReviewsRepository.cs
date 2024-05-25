@@ -9,7 +9,6 @@ namespace Proyect2TWM.Api.Repositories.Interfecies;
 
 public class PerfomanceReviewsRepository : IPerfomanceReviewsRepository
 {
-    //Se prepara la clase para saber que se estara trabajando con una base de datos 
     private readonly IDbContext _dbContext;
 
     public PerfomanceReviewsRepository(IDbContext context)
@@ -54,4 +53,12 @@ public class PerfomanceReviewsRepository : IPerfomanceReviewsRepository
             return null;
         return perfomanceReviews.IsDeleted == true ? null : perfomanceReviews;
     }
+    
+    public  async Task<PerfomanceReview> GetByName(string name, int id = 0)
+    {
+        string sql = $"SELECT * FROM PerfomanceReview WHERE Name = '{name}' AND id <> {id}";
+        var perfomanceReviews = await _dbContext.Connection.QueryAsync<PerfomanceReview>(sql);
+        return perfomanceReviews.ToList().FirstOrDefault();
+    }
+
 }

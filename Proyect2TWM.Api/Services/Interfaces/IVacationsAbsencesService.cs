@@ -16,4 +16,5 @@ public interface IVacationsAbsencesService
     Task<VacationsAbsencesDto> UpdateAsyncVA(VacationsAbsencesDto vacationsAbsences);
 
     Task<bool> DeleteAsyncVA(int id);
+    Task<bool> ExistByName(string name, int id = 0);
 }

@@ -72,21 +72,13 @@ public class PayrollsController : ControllerBase
             };
             return BadRequest(responseError);
         }
-        if (payrollsDto.id == 0)
-        {
-            var responseError = new Response<Pyrolls>
-            {
-                Errors = new List<string> { "El ID  no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
         
         //--
         if (!await _employeesService.EmployeeExist(payrollsDto.ID_Employee))
         {
             var responseError = new Response<Pyrolls>
             {
-                Errors = new List<string> { "El ID del Empleado no existe no existe." }
+                Errors = new List<string> { "El ID del Empleado no existe." }
             };
             return BadRequest(responseError);
         }
@@ -159,14 +151,6 @@ public class PayrollsController : ControllerBase
             };
             return BadRequest(responseError);
         }
-        if (payrollsDto.id == 0)
-        {
-            var responseError = new Response<Pyrolls>
-            {
-                Errors = new List<string> { "El ID  no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
         
         //--
         var response = new Response<PayrollsDto>();
@@ -175,7 +159,7 @@ public class PayrollsController : ControllerBase
         {
             var responseError = new Response<Pyrolls>
             {
-                Errors = new List<string> { "El ID del Empleado no existe no existe." }
+                Errors = new List<string> { "El ID del Empleado no existe." }
             };
             return BadRequest(responseError);
         }

@@ -1,0 +1,46 @@
+﻿@page "{id:int}"
+@model Proyect3TWN.WebSite.Pages.Pyrolls.Delete
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2>Delete Product Category</h2>
+            <form method="post">
+                <input type="hidden" asp-for="PayrollsDto.id" />
+                <div class="form-group">
+                    <label asp-for="PayrollsDto.ID_Employee"></label>
+                    <input readonly asp-for="PayrollsDto.ID_Employee" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PayrollsDto.PaymentDate"></label>
+                    <input readonly asp-for="PayrollsDto.PaymentDate" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PayrollsDto.Salary"></label>
+                    <input readonly asp-for="PayrollsDto.Salary" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PayrollsDto.Bonuses"></label>
+                    <input readonly asp-for="PayrollsDto.Bonuses" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PayrollsDto.Deductions"></label>
+                    <input readonly asp-for="PayrollsDto.Deductions" class="form-control" maxlength="45" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PayrollsDto.HoursWorked"></label>
+                    <input readonly asp-for="PayrollsDto.HoursWorked" class="form-control" maxlength="45" />
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary mr-3">Delete</button>
+                        <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

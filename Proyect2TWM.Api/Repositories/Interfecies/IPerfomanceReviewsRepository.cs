@@ -13,4 +13,5 @@ public interface IPerfomanceReviewsRepository
     Task<bool> DeleteAsyncPerfomance(int id);
     
     Task<PerfomanceReview> GetByIdPerfomance(int id);
+    Task<PerfomanceReview> GetByName(string name, int id = 0);
 }

@@ -9,7 +9,6 @@ namespace Proyect2TWM.Api.Repositories;
 
 public class PayrollsRepository : IPayrollsRepository
 {
-    //Se prepara la clase para saber que se estara trabajando con una base de datos 
     private readonly IDbContext _dbContext;
 
     public PayrollsRepository(IDbContext context)
@@ -54,4 +53,12 @@ public class PayrollsRepository : IPayrollsRepository
             return null;
         return pyrolls.IsDeleted == true ? null : pyrolls;
     }
+    
+    public  async Task<Pyrolls> GetByDatePayment(string paymentDate, int id = 0)
+    {
+        string sql = $"SELECT * FROM Pyrolls WHERE PaymentDate = '{paymentDate}' AND id <> {id}";
+        var pyrolls = await _dbContext.Connection.QueryAsync<Pyrolls>(sql);
+        return pyrolls.ToList().FirstOrDefault();
+    }
+
 }

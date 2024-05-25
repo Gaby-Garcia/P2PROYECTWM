@@ -13,4 +13,6 @@ public interface IVacationsAbsencesRepository
     Task<bool> DeleteAsyncVA(int id);
     
     Task<VacationsAbsences> GetByIdVA(int id);
+    
+    Task<VacationsAbsences> GetByName(string name, int id = 0);
 }

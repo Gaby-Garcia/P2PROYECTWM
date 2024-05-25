@@ -9,7 +9,6 @@ namespace Proyect2TWM.Api.Repositories.Interfecies;
 
 public class EmployeesRepository : IEmployeesRepository
 {
-    //Se prepara la clase para saber que se estara trabajando con una base de datos 
     private readonly IDbContext _dbContext;
 
     public EmployeesRepository(IDbContext context)
@@ -54,4 +53,12 @@ public class EmployeesRepository : IEmployeesRepository
             return null;
         return employee.IsDeleted == true ? null : employee;
     }
+    
+    public  async Task<Employee> GetByName(string name, int id = 0)
+    {
+        string sql = $"SELECT * FROM Employee WHERE Name = '{name}' AND id <> {id}";
+        var employees = await _dbContext.Connection.QueryAsync<Employee>(sql);
+        return employees.ToList().FirstOrDefault();
+    }
+
 }

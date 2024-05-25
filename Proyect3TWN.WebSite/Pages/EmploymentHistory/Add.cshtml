@@ -1,0 +1,62 @@
+﻿@page
+@model Proyect3TWN.WebSite.Pages.EmploymentHistory.Add
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2>Agregar Department</h2>
+            <form method="post">
+                <input type="hidden"/>
+                <div class="form-group">
+                    <label asp-for="EmploymentHistory.ID_Employee"></label>
+                    <input asp-for="EmploymentHistory.ID_Employee" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="EmploymentHistory.ID_Employee"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmploymentHistory.CompanyName"></label>
+                    <input asp-for="EmploymentHistory.CompanyName" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="EmploymentHistory.CompanyName"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmploymentHistory.CompanyPosition"></label>
+                    <input asp-for="EmploymentHistory.CompanyPosition" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="EmploymentHistory.CompanyPosition"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmploymentHistory.Description"></label>
+                    <input asp-for="EmploymentHistory.Description" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="EmploymentHistory.Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmploymentHistory.QuitWork"></label>
+                    <input asp-for="EmploymentHistory.QuitWork" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="EmploymentHistory.QuitWork"></span>
+                </div>
+                
+                
+                   @if (Model.Errors.Count > 0)
+                                    {
+                
+                                        <div class="alert alert-danger" role="alert">
+                                            <ul>
+                                                @foreach (var error in Model.Errors)
+                                                {           
+                                                    <li>@error</li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    }
+                
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary mr-3">Save</button>
+                        <a class="btn btn-secondary"> Cancel </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

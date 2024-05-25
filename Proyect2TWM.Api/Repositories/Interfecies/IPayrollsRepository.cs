@@ -13,4 +13,6 @@ public interface IPayrollsRepository
     Task<bool> DeleteAsyncP(int id);
     
     Task<Pyrolls> GetByIdP(int id);
+    
+    Task<Pyrolls> GetByDatePayment(string paymentDate, int id = 0);
 }

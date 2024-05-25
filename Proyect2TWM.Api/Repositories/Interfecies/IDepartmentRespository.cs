@@ -13,5 +13,7 @@ public interface IDepartmentRespository
     Task<bool> DeleteAsyncD(int id);
     
     Task<Department> GetByIdD(int id);
+    //Metodo para obtener categoruias por nombre
+    Task<Department> GetByName(string name, int id = 0);
     
 }

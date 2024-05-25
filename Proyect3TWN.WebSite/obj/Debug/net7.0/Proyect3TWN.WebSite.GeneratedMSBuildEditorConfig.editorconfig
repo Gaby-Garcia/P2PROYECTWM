@@ -1,0 +1,167 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Proyect3TWN.WebSite
+build_property.RootNamespace = Proyect3TWN.WebSite
+build_property.ProjectDir = C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect3TWN.WebSite\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect3TWN.WebSite
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Department/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Department/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Department/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Department/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudFxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Employees/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Employees/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Employees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Employees/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/EmploymentHistory/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95bWVudEhpc3RvcnlcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/EmploymentHistory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95bWVudEhpc3RvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/EmploymentHistory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95bWVudEhpc3RvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/EmploymentHistory/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95bWVudEhpc3RvcnlcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Login/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/PerfomanceReviews/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyZm9tYW5jZVJldmlld3NcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/PerfomanceReviews/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyZm9tYW5jZVJldmlld3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/PerfomanceReviews/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyZm9tYW5jZVJldmlld3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/PerfomanceReviews/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyZm9tYW5jZVJldmlld3NcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Pyrolls/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHlyb2xsc1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Pyrolls/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHlyb2xsc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Pyrolls/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHlyb2xsc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Pyrolls/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHlyb2xsc1xMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Shared/_LayoutLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Users/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Users/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/VacationsAbsences/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFjYXRpb25zQWJzZW5jZXNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/VacationsAbsences/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFjYXRpb25zQWJzZW5jZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/VacationsAbsences/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFjYXRpb25zQWJzZW5jZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/VacationsAbsences/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFjYXRpb25zQWJzZW5jZXNcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-e5ox6u35wy

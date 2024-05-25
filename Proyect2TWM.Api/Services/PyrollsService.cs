@@ -80,4 +80,10 @@ public class PyrollsService: IPyrollsService
         var pyrollDto = new PayrollsDto(payroll);
         return pyrollDto;
     }
+    
+    public async Task<bool> ExistByPaymentDate(string paymentDate, int id = 0)
+    {
+        var pyroll = await _payrollsRepository.GetByDatePayment(paymentDate, id);
+        return pyroll != null;
+    }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Proyect2TWM.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9395b431e3f25a36507491a9e3352c22a8c96b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Proyect2TWM.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Proyect2TWM.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

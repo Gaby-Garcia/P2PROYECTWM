@@ -10,3 +10,4 @@ C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.C
 C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\refint\Proyect2TWM.Core.dll
 C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\Proyect2TWM.Core.pdb
 C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\ref\Proyect2TWM.Core.dll
+C:\Users\gabyg\Desktop\PROYECT2DAM\Tecnm.Ecommerce\Tecnm.Ecommerce\Proyect2TWM.Core\obj\Debug\net7.0\Proyect2TWM.Core.sourcelink.json

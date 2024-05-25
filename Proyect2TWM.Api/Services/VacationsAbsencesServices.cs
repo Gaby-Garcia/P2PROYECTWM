@@ -79,4 +79,10 @@ public class VacationsAbsencesServices : IVacationsAbsencesService
         var vacationsAbsencesDto = new VacationsAbsencesDto(vacations);
         return vacationsAbsencesDto;
     }
+    
+    public async Task<bool> ExistByName(string name, int id = 0)
+    {
+        var vacations = await _vacationsAbsences.GetByName(name, id);
+        return vacations != null;
+    }
 }

@@ -39,12 +39,11 @@ public class UsersController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Response<Users>>> PostUsers([FromBody] UsersDto usersDto)
     {
-          // Validar campos de tipo string
-        if (usersDto.UserName == "string" || string.IsNullOrWhiteSpace(usersDto.UserName) || usersDto.UserName == "0")
+        if (usersDto.UserName == null || string.IsNullOrWhiteSpace(usersDto.UserName))
         {
             var responseError = new Response<Users>
             {
-                Errors = new List<string> { "El nombre de usuario es obligatorio." }
+                Errors = new List<string> {"El usuario es obligatorio"}
             };
             return BadRequest(responseError);
         }
@@ -67,15 +66,7 @@ public class UsersController : ControllerBase
             };
             return BadRequest(responseError);
         }
-        if (usersDto.id == 0)
-        {
-            var responseError = new Response<Users>
-            {
-                Errors = new List<string> { "El ID del Usuario no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
-        
+
         var response = new Response<UsersDto>()
         {
             Data = await _usersService.SaveAsycnU(usersDto)
@@ -103,16 +94,6 @@ public class UsersController : ControllerBase
     public async Task<ActionResult<Response<Users>>> UpdateUsers([FromBody] UsersDto usersDto)
     {
         
-        // Validar campos de tipo string
-        if (usersDto.UserName == "string" || string.IsNullOrWhiteSpace(usersDto.UserName) || usersDto.Email == "0")
-        {
-            var responseError = new Response<Users>
-            {
-                Errors = new List<string> { "El nombre de usuario es obligatorio." }
-            };
-            return BadRequest(responseError);
-        }
-
         if (usersDto.Password == "string"|| string.IsNullOrWhiteSpace(usersDto.Password) || usersDto.Email == "0")
         {
             var responseError = new Response<Users>
@@ -131,15 +112,9 @@ public class UsersController : ControllerBase
             };
             return BadRequest(responseError);
         }
-        if (usersDto.id == 0)
-        {
-            var responseError = new Response<Users>
-            {
-                Errors = new List<string> { "El ID del Usuario no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
+
         var response = new Response<UsersDto>();
+        
         if (!await _usersService.UsersExist(usersDto.id))
         {
             response.Errors.Add("User not found");
@@ -169,61 +144,36 @@ public class UsersController : ControllerBase
     
     [HttpPost]
     [Route("login")]
-    public async Task<ActionResult> Login([FromBody] UsersDto usersDto)
+    public async Task<ActionResult<Response<LoginDto>>> Login([FromBody] LoginDto loginDto)
     {
-        var isAuthenticated = await _usersService.AuthenticateAsync(usersDto.Email, usersDto.Password, usersDto.UserName);
+        var response = new Response<LoginDto>();
 
-        // Validar campos de tipo string
-        if (usersDto.UserName == "string" || string.IsNullOrWhiteSpace(usersDto.UserName) || usersDto.UserName == "0")
+        if (string.IsNullOrWhiteSpace(loginDto.Password) || loginDto.Password == "0")
         {
-            var responseError = new Response<Users>
-            {
-                Errors = new List<string> { "El nombre de usuario es obligatorio." }
-            };
-            return BadRequest(responseError);
+            response.Errors.Add("La contraseña es obligatoria.");
+            return BadRequest(response);
         }
 
-        if (usersDto.Password == "string"|| string.IsNullOrWhiteSpace(usersDto.Password) || usersDto.Password == "0")
+        if (!IsValidEmailFormat(loginDto.Email) || loginDto.Email == "0")
         {
-            var responseError = new Response<Users>
-            {
-                Errors = new List<string> { "La contraseña es obligatoria." }
-            };
-            return BadRequest(responseError);
+            response.Errors.Add("El correo electrónico no tiene un formato válido o no pertenece a un dominio permitido.");
+            return BadRequest(response);
         }
-        
-        // Validar el correo electrónico
-        if (usersDto.Email == "string" || !IsValidEmailFormat(usersDto.Email) || usersDto.Email == "0")
-        {
-            var responseError = new Response<Users>
-            {
-                Errors = new List<string> { "El correo electrónico no tiene un formato válido o no pertenece a un dominio permitido." }
-            };
-            return BadRequest(responseError);
-        }
-        if (usersDto.id == 0)
-        {
-            var responseError = new Response<Users>
-            {
-                Errors = new List<string> { "El ID del Usuario no puede ser igual a 0." }
-            };
-            return BadRequest(responseError);
-        }
-        //--
-        var response = new Response<UsersDto>();
-        if (!await _usersService.UsersExist(usersDto.id))
-        {
-            response.Errors.Add("User not found");
-            return NotFound(response);
-        }
-        
+
+
+        // Intentar autenticar al usuario
+        var isAuthenticated = await _usersService.AuthenticateAsync(loginDto.Email, loginDto.Password);
+
         if (isAuthenticated)
         {
-            return Ok("Inicio de sesión exitoso");
+            response.Data = loginDto; 
+            response.Message = "Inicio de sesión exitoso";
+            return Ok(response);
         }
         else
         {
-            return BadRequest("Correo electrónico,  contraseña o Username  incorrectos ");
+            response.Errors.Add("Correo electrónico o contraseña incorrectos");
+            return BadRequest(response);
         }
     }
   

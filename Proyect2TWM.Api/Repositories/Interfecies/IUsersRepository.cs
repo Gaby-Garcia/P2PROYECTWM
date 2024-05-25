@@ -14,6 +14,11 @@ public interface IUsersRepository
     
     Task<Users> GetByIdUser(int id);
     
-    Task<Users> GetByEmailAndPasswordAsync(string email, string password, string username);
+    Task<Users> GetByEmailAndPasswordAsync(string email, string password);
+    
+    Task<Users> GetByName(string userName, int id = 0);
+    
+    Task<Users> GetByEmail(string email, int id = 0);
+
     
 }
