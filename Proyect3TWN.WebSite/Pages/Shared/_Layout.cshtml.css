@@ -66,5 +66,13 @@
 .bi {
   margin-right: 10px;
 }
-
+  
 /* Add additional custom styles as needed */
+body{
+  background-color: #81bece;
+}
+
+footer{
+  background-color: #000000;
+  display: block;
+}

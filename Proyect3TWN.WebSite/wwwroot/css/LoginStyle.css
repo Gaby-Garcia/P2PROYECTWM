@@ -1,7 +1,7 @@
 ﻿/* custom.css */
 
 body {
-    background-color: #f0f8ff; /* AliceBlue background for the whole page */
+    background-color: #81bece; /* AliceBlue background for the whole page */
 }
 
 .login-container {
@@ -24,13 +24,27 @@ body {
 .login-container .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
+
+}
+.login-container .btn-success {
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-top: 10px;
 }
 
 .login-container .btn-primary:hover {
     background-color: #0056b3;
     border-color: #0056b3;
 }
+.login-container .btn-success:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
 
 .login-container .alert-danger {
     margin-top: 20px;
+}
+
+.login-body {
+    background-color: #81bece; 
 }

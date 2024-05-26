@@ -50,6 +50,8 @@ public class Edit : PageModel
         {
             //Actualizacion
             response = await _service.UpdateAsync(EmploymentHistoryDto);
+            Errors = response.Errors;
+
         }
         else
         {

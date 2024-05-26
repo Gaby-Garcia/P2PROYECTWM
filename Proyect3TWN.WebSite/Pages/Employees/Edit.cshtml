@@ -1,75 +1,137 @@
 ﻿@page "{id:int}"
 @model Proyect3TWN.WebSite.Pages.Employees.Edit
 
+<style>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <h2>Editing</h2>
-            <form method="post">
-                <input type="hidden" asp-for="EmployeesDto.id"/>
-                <div class="form-group">
-                    <label asp-for="EmployeesDto.Name"></label>
-                    <input asp-for="EmployeesDto.Name" class="form-control" maxlength="45"/>
-                    <span class="text-danger" asp-validation-for="EmployeesDto.Name"></span>
+    .card {
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #81bece; /* Color de fondo del encabezado */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .card-body {
+        padding: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    .form-control {
+        border-radius: 15px;
+    }
+
+    .text-danger {
+        color: #dc3545; /* Color de texto para los mensajes de error */
+    }
+
+    .btn-primary {
+        background-color: #81bece; /* Color de fondo del botón primario */
+        border-color: #81bece;
+        border-radius: 15px;
+    }
+
+    .btn-primary:hover {
+        background-color: #5ca9bf; /* Cambio de color al pasar el ratón */
+        border-color: #5ca9bf;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d; /* Color de fondo del botón secundario */
+        border-color: #6c757d;
+        border-radius: 15px;
+    }
+
+    .btn-secondary:hover {
+        background-color: #565e64; /* Cambio de color al pasar el ratón */
+        border-color: #565e64;
+    }
+
+    .alert {
+        border-radius: 15px;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-0">Editar Empleado</h2>
                 </div>
-                <div class="form-group">
-                    <label asp-for="EmployeesDto.LastName"></label>
-                    <input asp-for="EmployeesDto.LastName" class="form-control" maxlength="100"/>
-                    <span class="text-danger" asp-validation-for="EmployeesDto.LastName"></span>
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="EmployeesDto.id" />
+                        <div class="form-group">
+                            <label asp-for="EmployeesDto.Name">Nombre</label>
+                            <input asp-for="EmployeesDto.Name" class="form-control" maxlength="45" />
+                            <span class="text-danger" asp-validation-for="EmployeesDto.Name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmployeesDto.LastName">Apellido</label>
+                            <input asp-for="EmployeesDto.LastName" class="form-control" maxlength="100" />
+                            <span class="text-danger" asp-validation-for="EmployeesDto.LastName"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmployeesDto.BirthDate">Fecha de Nacimiento</label>
+                            <input asp-for="EmployeesDto.BirthDate" class="form-control" maxlength="100" />
+                            <span class="text-danger" asp-validation-for="EmployeesDto.BirthDate"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmployeesDto.Gender">Género</label>
+                            <input asp-for="EmployeesDto.Gender" class="form-control" maxlength="100" />
+                            <span class="text-danger" asp-validation-for="EmployeesDto.Gender"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmployeesDto.Address">Dirección</label>
+                            <input asp-for="EmployeesDto.Address" class="form-control" maxlength="100" />
+                            <span class="text-danger" asp-validation-for="EmployeesDto.Address"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmployeesDto.Phone">Teléfono</label>
+                            <input asp-for="EmployeesDto.Phone" class="form-control" maxlength="100" />
+                            <span class="text-danger" asp-validation-for="EmployeesDto.Phone"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmployeesDto.Email">Email</label>
+                            <input asp-for="EmployeesDto.Email" class="form-control" maxlength="100" />
+                            <span class="text-danger" asp-validation-for="EmployeesDto.Email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmployeesDto.ID_Department">ID Departamento</label>
+                            <input asp-for="EmployeesDto.ID_Department" class="form-control" maxlength="100" />
+                            <span class="text-danger" asp-validation-for="EmployeesDto.ID_Department"></span>
+                        </div>
+                        
+                        @if (Model.Errors.Count > 0)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                <ul>
+                                    @foreach (var error in Model.Errors)
+                                    {
+                                        <li>@error</li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn btn-primary mr-3">Guardar</button>
+                                <a class="btn btn-secondary">Cancelar</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label asp-for="EmployeesDto.BirthDate"></label>
-                    <input asp-for="EmployeesDto.BirthDate" class="form-control" maxlength="100"/>
-                    <span class="text-danger" asp-validation-for="EmployeesDto.BirthDate"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmployeesDto.Gender"></label>
-                    <input asp-for="EmployeesDto.Gender" class="form-control" maxlength="100"/>
-                    <span class="text-danger" asp-validation-for="EmployeesDto.Gender"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmployeesDto.Address"></label>
-                    <input asp-for="EmployeesDto.Address" class="form-control" maxlength="100"/>
-                    <span class="text-danger" asp-validation-for="EmployeesDto.Address"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmployeesDto.Phone"></label>
-                    <input asp-for="EmployeesDto.Phone" class="form-control" maxlength="100"/>
-                    <span class="text-danger" asp-validation-for="EmployeesDto.Phone"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmployeesDto.Email"></label>
-                    <input asp-for="EmployeesDto.Email" class="form-control" maxlength="100"/>
-                    <span class="text-danger" asp-validation-for="EmployeesDto.Email"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmployeesDto.ID_Department"></label>
-                    <input asp-for="EmployeesDto.ID_Department" class="form-control" maxlength="100"/>
-                    <span class="text-danger" asp-validation-for="EmployeesDto.ID_Department"></span>
-                </div>
-                
-                @if (Model.Errors.Count > 0)
-                {
-                
-                    <div class="alert alert-danger" role="alert">
-                        <ul>
-                            @foreach (var error in Model.Errors)
-                            {
-                                <li>An error</li>
-                            }
-                        </ul>
-                    </div>
-                }
-                <div class="row">
-                    <div class="col-md-12 text-right">
-                        <button type="submit" class="btn btn-primary mr-3">Save</button>
-                        <a class="btn btn-secondary"> Cancel </a>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-        <div class="col-md-1"></div>
     </div>
 </div>

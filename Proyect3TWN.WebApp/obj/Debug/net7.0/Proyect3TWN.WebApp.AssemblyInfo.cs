@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Proyect3TWN.WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9395b431e3f25a36507491a9e3352c22a8c96b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b20f625f5c2093aa489d64ccafd72a9391647ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("Proyect3TWN.WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Proyect3TWN.WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

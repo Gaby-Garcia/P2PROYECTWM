@@ -1,7 +1,11 @@
 ﻿@page
-@model Proyect3TWN.WebSite.Pages.EmploymentHistory.Add
+@model Proyect3TWN.WebSite.Pages.Users.SignUp
 
 <style>
+    /* Estilos personalizados para el formulario */
+    .container-fluid {
+        margin-top: 50px; /* Espacio superior */
+    }
 
     .card {
         border: none;
@@ -61,35 +65,30 @@
     }
 </style>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="mb-0">Agregar Historial Laboral</h2>
+                    <h2 class="mb-0">Registrar Usuario</h2>
                 </div>
                 <div class="card-body">
                     <form method="post">
-                        <input type="hidden" asp-for="EmploymentHistory.ID_Employee" />
+                        <input type="hidden"/>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistory.CompanyName">Nombre de la Empresa</label>
-                            <input asp-for="EmploymentHistory.CompanyName" class="form-control" maxlength="45" />
-                            <span class="text-danger" asp-validation-for="EmploymentHistory.CompanyName"></span>
+                            <label asp-for="UsersDto.UserName">Nombre de Usuario</label>
+                            <input asp-for="UsersDto.UserName" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="UsersDto.UserName"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistory.CompanyPosition">Cargo en la Empresa</label>
-                            <input asp-for="EmploymentHistory.CompanyPosition" class="form-control" maxlength="45" />
-                            <span class="text-danger" asp-validation-for="EmploymentHistory.CompanyPosition"></span>
+                            <label asp-for="UsersDto.Email">Correo Electrónico</label>
+                            <input asp-for="UsersDto.Email" class="form-control" maxlength="100"/>
+                            <span class="text-danger" asp-validation-for="UsersDto.Email"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistory.Description">Descripción</label>
-                            <input asp-for="EmploymentHistory.Description" class="form-control" maxlength="45" />
-                            <span class="text-danger" asp-validation-for="EmploymentHistory.Description"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="EmploymentHistory.QuitWork">Fecha de Renuncia</label>
-                            <input asp-for="EmploymentHistory.QuitWork" class="form-control" maxlength="45" />
-                            <span class="text-danger" asp-validation-for="EmploymentHistory.QuitWork"></span>
+                            <label asp-for="UsersDto.Password">Contraseña</label>
+                            <input asp-for="UsersDto.Password" class="form-control" maxlength="100"/>
+                            <span class="text-danger" asp-validation-for="UsersDto.Password"></span>
                         </div>
                         
                         @if (Model.Errors.Count > 0)
@@ -97,15 +96,16 @@
                             <div class="alert alert-danger" role="alert">
                                 <ul>
                                     @foreach (var error in Model.Errors)
-                                    {
+                                    {           
                                         <li>@error</li>
                                     }
                                 </ul>
                             </div>
                         }
+                        
                         <div class="row">
                             <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-primary mr-3">Guardar</button>
+                                <button type="submit" class="btn btn-primary mr-3">Registrar</button>
                                 <a class="btn btn-secondary">Cancelar</a>
                             </div>
                         </div>
@@ -113,5 +113,6 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-1"></div>
     </div>
 </div>

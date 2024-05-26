@@ -67,12 +67,22 @@ public class UsersController : ControllerBase
             return BadRequest(responseError);
         }
 
-        var response = new Response<UsersDto>()
+        var response = new Response<UsersDto>();
+
+        if (await _usersService.ExistByUser(usersDto.UserName))
         {
-            Data = await _usersService.SaveAsycnU(usersDto)
-        };
-        
+            response.Errors.Add($"UserName {usersDto.UserName} already exist");
+            return BadRequest(response);
+        }
+        if (await _usersService.ExistByEmail(usersDto.Email))
+        {
+            response.Errors.Add($"Email {usersDto.Email} already exist");
+            return BadRequest(response);
+        }
+
+        response.Data = await _usersService.SaveAsycnU(usersDto);
         return Created($"/api/[controller]/{response.Data.id}", response);
+    
     }
 
     [HttpGet]

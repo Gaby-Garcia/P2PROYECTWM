@@ -19,4 +19,16 @@ html {
 
 body {
   margin-bottom: 60px;
+
+}
+footer {
+  position: fixed; /* Fija la posición del footer */
+  bottom: 0; /* Lo coloca al pie de la página */
+  width: 100%; /* Ocupa todo el ancho de la página */
+  background-color: #000000;
+  display: block;
+}
+
+#login-body {
+  background-color: #81bece; /* Color de fondo azul para la página de inicio de sesión */
 }

@@ -6,14 +6,14 @@ using Proyect3TWN.WebSite.Services.Interfaces;
 
 namespace Proyect3TWN.WebSite.Pages.Users;
 
-public class Add : PageModel
+public class SignUp : PageModel
 {
     [BindProperty] public UsersDto UsersDto { get; set; }
 
     public List<string> Errors { get; set; } = new List<string>();
     private readonly IUsersService _service;
 
-    public Add(IUsersService service)
+    public SignUp(IUsersService service)
     {
         _service = service;
     }

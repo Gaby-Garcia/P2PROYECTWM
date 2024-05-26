@@ -1,41 +1,105 @@
 ﻿@page "{id:int}"
 @model Proyect3TWN.WebSite.Pages.EmploymentHistory.Delete
 
+<style>
+
+    .card {
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #81bece; /* Color de fondo del encabezado */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .card-body {
+        padding: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    .form-control {
+        border-radius: 15px;
+    }
+
+    .text-danger {
+        color: #dc3545; /* Color de texto para los mensajes de error */
+    }
+
+    .btn-primary {
+        background-color: #81bece; /* Color de fondo del botón primario */
+        border-color: #81bece;
+        border-radius: 15px;
+    }
+
+    .btn-primary:hover {
+        background-color: #5ca9bf; /* Cambio de color al pasar el ratón */
+        border-color: #5ca9bf;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d; /* Color de fondo del botón secundario */
+        border-color: #6c757d;
+        border-radius: 15px;
+    }
+
+    .btn-secondary:hover {
+        background-color: #565e64; /* Cambio de color al pasar el ratón */
+        border-color: #565e64;
+    }
+
+    .alert {
+        border-radius: 15px;
+    }
+</style>
+
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <h2>Delete Product Category</h2>
-            <form method="post">
-                <input type="hidden" asp-for="EmploymentHistoryDto.id" />
-                <div class="form-group">
-                    <label asp-for="EmploymentHistoryDto.ID_Employee"></label>
-                    <input readonly asp-for="EmploymentHistoryDto.ID_Employee" class="form-control" maxlength="45" />
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-0">Eliminar Historial Laboral</h2>
                 </div>
-                <div class="form-group">
-                    <label asp-for="EmploymentHistoryDto.CompanyName"></label>
-                    <input readonly asp-for="EmploymentHistoryDto.CompanyName" class="form-control" maxlength="45" />
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="EmploymentHistoryDto.id" />
+                        <div class="form-group">
+                            <label asp-for="EmploymentHistoryDto.ID_Employee">ID del Empleado</label>
+                            <input readonly asp-for="EmploymentHistoryDto.ID_Employee" class="form-control" maxlength="45" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmploymentHistoryDto.CompanyName">Nombre de la Empresa</label>
+                            <input readonly asp-for="EmploymentHistoryDto.CompanyName" class="form-control" maxlength="45" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmploymentHistoryDto.CompanyPosition">Cargo en la Empresa</label>
+                            <input readonly asp-for="EmploymentHistoryDto.CompanyPosition" class="form-control" maxlength="45" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmploymentHistoryDto.Description">Descripción</label>
+                            <input readonly asp-for="EmploymentHistoryDto.Description" class="form-control" maxlength="45" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmploymentHistoryDto.QuitWork">Fecha de Renuncia</label>
+                            <input readonly asp-for="EmploymentHistoryDto.QuitWork" class="form-control" maxlength="45" />
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn btn-primary mr-3">Eliminar</button>
+                                <a asp-page="./List" class="btn btn-secondary">Cancelar</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label asp-for="EmploymentHistoryDto.CompanyPosition"></label>
-                    <input readonly asp-for="EmploymentHistoryDto.CompanyPosition" class="form-control" maxlength="45" />
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmploymentHistoryDto.Description"></label>
-                    <input readonly asp-for="EmploymentHistoryDto.Description" class="form-control" maxlength="45" />
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmploymentHistoryDto.QuitWork"></label>
-                    <input readonly asp-for="EmploymentHistoryDto.QuitWork" class="form-control" maxlength="45" />
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-right">
-                        <button type="submit" class="btn btn-primary mr-3">Delete</button>
-                        <a asp-page="./List" class="btn btn-secondary">Cancel</a>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-        <div class="col-md-1"></div>
     </div>
 </div>

@@ -1,7 +1,6 @@
 ﻿/* Estilos personalizados para el formulario y los cards */
 .container-fluid-department {
     padding-top: 20px;
-    background: linear-gradient(to bottom right, #e0f7fa, #b3e5fc); /* Fondo degradado de azul pastel */
 }
 
 .btn-primary,
@@ -11,12 +10,24 @@
     margin-right: 10px; /* Espacio entre botones */
 }
 
+.btn-success-new{
+    background-color: #81bece;
+}
+
+.btn-danger-list{
+    background-color: #ff7c70;
+}
+
+.btn-primary-list{
+    background-color: #81bece;
+}
+
 .card-department {
     border: none;
     border-radius: 20px; /* Esquinas redondeadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px; /* Espacio entre cards */
-    background-color: #ffffff; /* Fondo blanco para el card */
+    background-color: #dcdcdc;
     min-height: 200px; /* Altura mínima para los cards */
     display: flex;
     flex-direction: column;
@@ -34,7 +45,7 @@
 }
 
 .card-text-department {
-    color: #6c757d;
+    color: #333333;
     margin-bottom: 10px;
     font-size: 0.9rem; /* Tamaño de texto más pequeño */
 }
@@ -53,3 +64,4 @@ h1 {
     margin-top: 50px; /* Espacio superior */
     margin-bottom: 30px; /* Espacio inferior */
 }
+

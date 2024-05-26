@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Login";
 }
-
+<body id="login-body">
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="max-width: 400px; width: 100%;">
         <div class="card-body">
@@ -19,6 +19,7 @@
                     <input type="password" class="form-control" id="Password" name="Password" value="@Model.LoginDto.Password" required />
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Login</button>
+                <a asp-page="/Login/SignUp" class="btn btn-success w-100">Sign Up</a>
             </form>
             @if (Model.Response != null && Model.Response.Errors.Count > 0)
             {
@@ -32,3 +33,5 @@
         </div>
     </div>
 </div>
+</body>
+

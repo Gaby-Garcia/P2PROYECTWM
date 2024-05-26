@@ -78,6 +78,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Login/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/PerfomanceReviews/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyZm9tYW5jZVJldmlld3NcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -120,10 +124,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Users/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/gabyg/Desktop/PROYECT2DAM/Tecnm.Ecommerce/Tecnm.Ecommerce/Proyect3TWN.WebSite/Pages/Users/Delete.cshtml]
