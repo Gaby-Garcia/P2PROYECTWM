@@ -72,10 +72,11 @@
                     <form method="post">
                         <input type="hidden" asp-for="EmploymentHistoryDto.id"/>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistoryDto.ID_Employee">ID del Empleado</label>
-                            <input asp-for="EmploymentHistoryDto.ID_Employee" class="form-control" maxlength="45"/>
-                            <span class="text-danger" asp-validation-for="EmploymentHistoryDto.ID_Employee"></span>
+                            <label asp-for="EmploymentHistoryDto.QuitWork">QuitWork</label>
+                            <input asp-for="EmploymentHistoryDto.QuitWork" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="EmploymentHistoryDto.QuitWork"></span>
                         </div>
+                         
                         <div class="form-group">
                             <label asp-for="EmploymentHistoryDto.CompanyName">Nombre de la Empresa</label>
                             <input asp-for="EmploymentHistoryDto.CompanyName" class="form-control" maxlength="100"/>
@@ -92,17 +93,26 @@
                             <span class="text-danger" asp-validation-for="EmploymentHistoryDto.Description"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistoryDto.QuitWork">Fecha de Renuncia</label>
-                            <input asp-for="EmploymentHistoryDto.QuitWork" class="form-control" maxlength="100"/>
-                            <span class="text-danger" asp-validation-for="EmploymentHistoryDto.QuitWork"></span>
+                            <label asp-for="EmploymentHistoryDto.ID_Employee">Employee</label>
+                            <select asp-for="EmploymentHistoryDto.ID_Employee" class="form-control">
+                                <option value="">Seleccionar Empleado</option>
+                                @if (Model.Employees != null)
+                                {
+                                    @foreach (var employee in Model.Employees)
+                                    {
+                                        <option value="@employee.id">@employee.Name</option>
+                                    }
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="EmploymentHistoryDto.ID_Employee"></span>
                         </div>
-                        @if (Model.Errors.Count > 0)
+                        @if (Model.Errors.Count > 0 && Model.Errors !=null)
                         {
                             <div class="alert alert-danger" role="alert">
                                 <ul>
-                                    @foreach (var error in Model.Errors)
+                                    @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
                                     {
-                                        <li>@error</li>
+                                        <li>@error.ErrorMessage</li>
                                     }
                                 </ul>
                             </div>

@@ -88,8 +88,8 @@
                             <input readonly asp-for="EmploymentHistoryDto.Description" class="form-control" maxlength="45" />
                         </div>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistoryDto.QuitWork">Fecha de Renuncia</label>
-                            <input readonly asp-for="EmploymentHistoryDto.QuitWork" class="form-control" maxlength="45" />
+                            <label>Employee</label>
+                            <input readonly value="@Model.EmployeeName[Model.EmploymentHistoryDto.ID_Employee]" class="form-control" />
                         </div>
                         <div class="row">
                             <div class="col-md-12 text-right">

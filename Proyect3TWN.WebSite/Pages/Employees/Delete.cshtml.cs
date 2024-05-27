@@ -5,34 +5,50 @@ using Proyect3TWN.WebSite.Services.Interfaces;
 
 namespace Proyect3TWN.WebSite.Pages.Employees;
 
-public class Delete : PageModel
+public class DeleteModel : PageModel
 {
-    [BindProperty] public EmployeesDto EmployeesDto { get; set; }
+    private readonly IEmployeeService _employeeService;
+    private readonly IDepartmentService _departmentService;
 
-    public List<string> Errors { get; set; } = new List<string>();
-    private readonly IEmployeeService _service;
+    [BindProperty]
+    public EmployeesDto EmployeesDto { get; set; }
 
-    public Delete(IEmployeeService service)
+    public Dictionary<int, string> DepartmentNames { get; set; }
+
+    public DeleteModel(IEmployeeService employeeService, IDepartmentService departmentService)
     {
-        _service = service;
+        _employeeService = employeeService;
+        _departmentService = departmentService;
+        DepartmentNames = new Dictionary<int, string>();
     }
+
     public async Task<IActionResult> OnGet(int id)
     {
-        EmployeesDto = new EmployeesDto();
-
-        var response = await _service.GetById(id);
-        if (response == null || response.Data == null)
+        var employeeResponse = await _employeeService.GetById(id);
+        if (employeeResponse?.Data == null)
         {
-            return RedirectToPage("/Error");
+            return NotFound();
         }
-        EmployeesDto = response.Data;
+
+        EmployeesDto = employeeResponse.Data;
+
+        var departmentResponse = await _departmentService.GetAllAsync();
+        if (departmentResponse?.Data != null)
+        {
+            DepartmentNames = departmentResponse.Data.ToDictionary(d => d.id, d => d.Name);
+        }
 
         return Page();
     }
 
     public async Task<IActionResult> OnPostAsync()
     {
-        var response = await _service.DeleteAsync(EmployeesDto.id);
+        if (EmployeesDto == null)
+        {
+            return NotFound();
+        }
+
+        await _employeeService.DeleteAsync(EmployeesDto.id);
         return RedirectToPage("./List");
     }
 }

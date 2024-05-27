@@ -8,23 +8,31 @@ namespace Proyect3TWN.WebSite.Pages.Pyrolls;
 
 public class Edit : PageModel
 {
-    [BindProperty] public PayrollsDto PayrollsDto { get; set; }
+    [BindProperty]
+    public PayrollsDto PayrollsDto { get; set; }
+
+    public List<EmployeesDto> Employees { get; set; }
 
     public List<string> Errors { get; set; } = new List<string>();
+    
     private readonly IPyrollsService _service;
+    private readonly IEmployeeService _employeeService;
 
-    public Edit(IPyrollsService service)
+    public Edit(IPyrollsService service, IEmployeeService employeeService)
     {
         _service = service;
+        _employeeService = employeeService;
     }
 
-    public  async Task<IActionResult> OnGet(int? id)
+    public async Task<IActionResult> OnGetAsync(int? id)
     {
         PayrollsDto = new PayrollsDto();
+        
+        var employeeResponse = await _employeeService.GetAllAsync();
+        Employees = employeeResponse.Data;
 
         if (id.HasValue)
         {
-            //obtener informacion del servicio API
             var response = await _service.GetById(id.Value);
             PayrollsDto = response.Data;
         }
@@ -41,6 +49,8 @@ public class Edit : PageModel
     {
         if (!ModelState.IsValid)
         {
+            var employeeResponse = await _employeeService.GetAllAsync();
+            Employees = employeeResponse.Data;
             return Page();
         }
 
@@ -48,19 +58,30 @@ public class Edit : PageModel
 
         if (PayrollsDto.id > 0)
         {
-            //Actualizacion
             response = await _service.UpdateAsync(PayrollsDto);
             Errors = response.Errors;
-
         }
         else
         {
-            //Insercion
             response = await _service.SaveAsync(PayrollsDto);
         }
 
-        if (Errors.Count > 0)
+        if (response == null || response.Data == null)
         {
+            ModelState.AddModelError("", "La respuesta del servicio es nula o no contiene datos válidos.");
+            var employeeResponse = await _employeeService.GetAllAsync();
+            Employees = employeeResponse.Data;
+            return Page();
+        }
+
+        if (response.Errors != null && response.Errors.Count > 0)
+        {
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+            var employeeResponse = await _employeeService.GetAllAsync();
+            Employees = employeeResponse.Data;
             return Page();
         }
 

@@ -107,22 +107,32 @@
                             <span class="text-danger" asp-validation-for="EmployeesDto.Email"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="EmployeesDto.ID_Department">ID Departamento</label>
-                            <input asp-for="EmployeesDto.ID_Department" class="form-control" maxlength="45" />
+                            <label asp-for="EmployeesDto.ID_Department">Departamento</label>
+                            <select asp-for="EmployeesDto.ID_Department" class="form-control">
+                                <option value="">Seleccionar Departamento</option>
+                                @if (Model.Departments != null)
+                                {
+                                    @foreach (var department in Model.Departments)
+                                    {
+                                        <option value="@department.id">@department.Name</option>
+                                    }
+                                }
+                            </select>
                             <span class="text-danger" asp-validation-for="EmployeesDto.ID_Department"></span>
                         </div>
                         
-                        @if (Model.Errors.Count > 0)
-                        {
-                            <div class="alert alert-danger" role="alert">
-                                <ul>
-                                    @foreach (var error in Model.Errors)
-                                    {
-                                        <li>@error</li>
-                                    }
-                                </ul>
-                            </div>
-                        }
+                        @if (ModelState.ErrorCount > 0)
+                                               {
+                                                   <div class="alert alert-danger" role="alert">
+                                                       <ul>
+                                                           @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                                                           {
+                                                               <li>@error.ErrorMessage</li>
+                                                           }
+                                                       </ul>
+                                                   </div>
+                                               }
+                        
                         <div class="row">
                             <div class="col-md-12 text-right">
                                 <button type="submit" class="btn btn-primary">Guardar</button>

@@ -10,18 +10,24 @@ public class Edit : PageModel
 {
     [BindProperty] public EmploymentHistoryDto EmploymentHistoryDto { get; set; }
 
+    public List<EmployeesDto> Employees { get; set; }
     public List<string> Errors { get; set; } = new List<string>();
     private readonly IEmploymentHistoryService _service;
+    private readonly IEmployeeService _employeeService;
 
-    public Edit(IEmploymentHistoryService service)
+    public Edit(IEmploymentHistoryService service, IEmployeeService employeeService)
     {
         _service = service;
+        _employeeService = employeeService;
     }
 
     public  async Task<IActionResult> OnGet(int? id)
     {
         EmploymentHistoryDto = new EmploymentHistoryDto();
 
+        var employee = await _employeeService.GetAllAsync();
+        Employees = employee.Data;
+        
         if (id.HasValue)
         {
             //obtener informacion del servicio API
@@ -41,6 +47,8 @@ public class Edit : PageModel
     {
         if (!ModelState.IsValid)
         {
+            var employee = await _employeeService.GetAllAsync();
+            Employees = employee.Data;
             return Page();
         }
 
@@ -58,12 +66,25 @@ public class Edit : PageModel
             //Insercion
             response = await _service.SaveAsync(EmploymentHistoryDto);
         }
-
-        if (Errors.Count > 0)
+        if (response == null || response.Data == null)
         {
+            // Maneja el caso donde la respuesta es nula
+            ModelState.AddModelError("", "La respuesta del servicio es nula o no contiene datos válidos.");
+            var employee = await _employeeService.GetAllAsync();
+            Employees = employee.Data;
             return Page();
         }
-
+        if (response.Errors != null && response.Errors.Count > 0)
+        {
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+            // Recargar los departamentos
+            var employee = await _employeeService.GetAllAsync();
+            Employees = employee.Data;
+            return Page();
+        }
         EmploymentHistoryDto = response.Data;
         return RedirectToPage("./List");
     }

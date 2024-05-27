@@ -83,11 +83,6 @@ public class EmploymentHistoryController : ControllerBase
         }
         var response = new Response<EmploymentHistoryDto>();
 
-        if (await _employmentHistory.ExistByCompanyName(employmentHistoryDto.CompanyName))
-        {
-            response.Errors.Add($"CompanyName {employmentHistoryDto.CompanyName} already exist");
-            return BadRequest(response);
-        }
 
         response.Data = await _employmentHistory.SaveAsycnEH(employmentHistoryDto);
         return Created($"/api/[controller]/{response.Data.id}", response);

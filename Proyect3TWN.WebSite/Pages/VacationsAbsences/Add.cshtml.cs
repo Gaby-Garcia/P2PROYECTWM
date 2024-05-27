@@ -10,18 +10,25 @@ public class Add : PageModel
 {
     [BindProperty] public VacationsAbsencesDto VacationsAbsencesDto { get; set; }
 
+    public List<EmployeesDto> Employees { get; set; }
+
     public List<string> Errors { get; set; } = new List<string>();
     private readonly IVacationsAbsencesService _service;
+    private readonly IEmployeeService _employeeService;
 
-    public Add(IVacationsAbsencesService service)
+    public Add(IVacationsAbsencesService service, IEmployeeService employeeService)
     {
         _service = service;
+        _employeeService = employeeService;
     }
 
     public async Task<IActionResult> OnGet(int? id)
     {
         VacationsAbsencesDto = new VacationsAbsencesDto();
 
+        var employeesResponse = await _employeeService.GetAllAsync();
+        Employees = employeesResponse.Data;
+        
         if (id.HasValue)
         {
             //obtener informacion del servicio API
@@ -41,16 +48,31 @@ public class Add : PageModel
     {
         if (!ModelState.IsValid)
         {
+            var employeesResponse = await _employeeService.GetAllAsync();
+            Employees = employeesResponse.Data;
             return Page();
         }
 
         Response<VacationsAbsencesDto> response;
         
         response = await _service.SaveAsync(VacationsAbsencesDto);
-        Errors = response.Errors;
+        if (response == null || response.Data == null)
+        {
+            ModelState.AddModelError("", "La respuesta del servicio es nula o no contiene datos válidos.");
+            var employeesResponse = await _employeeService.GetAllAsync();
+            Employees = employeesResponse.Data;
+            return Page();
+        }
 
-        if (Errors.Count > 0)
-        {   
+       
+        if (response.Errors != null && response.Errors.Count > 0)
+        {
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+            var employeesResponse = await _employeeService.GetAllAsync();
+            Employees = employeesResponse.Data;
             return Page();
         }
 

@@ -30,10 +30,6 @@
         border-radius: 15px;
     }
 
-    .text-danger {
-        color: #dc3545; /* Color de texto para los mensajes de error */
-    }
-
     .btn-primary {
         background-color: #81bece; /* Color de fondo del botón primario */
         border-color: #81bece;
@@ -56,62 +52,82 @@
         border-color: #565e64;
     }
 
-    .alert {
-        border-radius: 15px;
+    .text-danger {
+        margin-top: 5px; /* Espacio superior para los mensajes de error */
+    }
+
+    .alert-danger ul {
+        margin-bottom: 0;
     }
 </style>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
                     <h2 class="mb-0">Agregar Historial Laboral</h2>
                 </div>
                 <div class="card-body">
                     <form method="post">
-                        <input type="hidden" asp-for="EmploymentHistory.ID_Employee" />
+                        <input type="hidden" asp-for="EmploymentHistoryDto.id"/>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistory.CompanyName">Nombre de la Empresa</label>
-                            <input asp-for="EmploymentHistory.CompanyName" class="form-control" maxlength="45" />
-                            <span class="text-danger" asp-validation-for="EmploymentHistory.CompanyName"></span>
+                            <label asp-for="EmploymentHistoryDto.ID_Employee">Empleado</label>
+                            <select asp-for="EmploymentHistoryDto.ID_Employee" class="form-control">
+                                <option value="">Seleccionar Empleado</option>
+                                @if (Model.Employees != null)
+                                {
+                                    @foreach (var employee in Model.Employees)
+                                    {
+                                        <option value="@employee.id">@employee.Name</option>
+                                    }
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="EmploymentHistoryDto.ID_Employee"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistory.CompanyPosition">Cargo en la Empresa</label>
-                            <input asp-for="EmploymentHistory.CompanyPosition" class="form-control" maxlength="45" />
-                            <span class="text-danger" asp-validation-for="EmploymentHistory.CompanyPosition"></span>
+                            <label asp-for="EmploymentHistoryDto.CompanyName">Nombre Compañia</label>
+                            <input asp-for="EmploymentHistoryDto.CompanyName" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="EmploymentHistoryDto.CompanyName"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistory.Description">Descripción</label>
-                            <input asp-for="EmploymentHistory.Description" class="form-control" maxlength="45" />
-                            <span class="text-danger" asp-validation-for="EmploymentHistory.Description"></span>
+                            <label asp-for="EmploymentHistoryDto.CompanyPosition">Posicion de Trabajo</label>
+                            <input asp-for="EmploymentHistoryDto.CompanyPosition" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="EmploymentHistoryDto.CompanyPosition"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="EmploymentHistory.QuitWork">Fecha de Renuncia</label>
-                            <input asp-for="EmploymentHistory.QuitWork" class="form-control" maxlength="45" />
-                            <span class="text-danger" asp-validation-for="EmploymentHistory.QuitWork"></span>
+                            <label asp-for="EmploymentHistoryDto.Description">Descripcion</label>
+                            <input asp-for="EmploymentHistoryDto.Description" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="EmploymentHistoryDto.Description"></span>
                         </div>
-                        
-                        @if (Model.Errors.Count > 0)
+                        <div class="form-group">
+                            <label asp-for="EmploymentHistoryDto.QuitWork">QuitWork</label>
+                            <input asp-for="EmploymentHistoryDto.QuitWork" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="EmploymentHistoryDto.QuitWork"></span>
+                        </div>
+ 
+                        @if (Model.Errors.Count > 0 && Model.Errors !=null)
                         {
                             <div class="alert alert-danger" role="alert">
                                 <ul>
-                                    @foreach (var error in Model.Errors)
+                                    @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
                                     {
-                                        <li>@error</li>
+                                        <li>@error.ErrorMessage</li>
                                     }
                                 </ul>
+                                
                             </div>
                         }
                         <div class="row">
                             <div class="col-md-12 text-right">
                                 <button type="submit" class="btn btn-primary mr-3">Guardar</button>
-                                <a class="btn btn-secondary">Cancelar</a>
+                                <a class="btn btn-secondary" asp-page="./List">Cancelar</a>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        <div class="col-md-1"></div>
     </div>
 </div>

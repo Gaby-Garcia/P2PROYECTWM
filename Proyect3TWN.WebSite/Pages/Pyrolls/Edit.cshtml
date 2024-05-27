@@ -1,5 +1,5 @@
 ﻿@page "{id:int}"
-@model Proyect3TWN.WebSite.Pages.Pyrolls.Delete
+@model Proyect3TWN.WebSite.Pages.Pyrolls.Edit
 
 <style>
     .card {
@@ -51,45 +51,70 @@
         border-color: #565e64;
     }
 </style>
-
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="mb-0">Eliminar Nómina</h2>
+                    <h2 class="mb-0">Editar Nomina</h2>
                 </div>
                 <div class="card-body">
                     <form method="post">
-                        <input type="hidden" asp-for="PayrollsDto.id" />
+                        <input type="hidden" asp-for="PayrollsDto.id"/>
                         <div class="form-group">
-                            <label asp-for="PayrollsDto.ID_Employee">ID de Empleado</label>
-                            <input readonly asp-for="PayrollsDto.ID_Employee" class="form-control" maxlength="45" />
+                            <label asp-for="PayrollsDto.ID_Employee">Empleado</label>
+                            <select asp-for="PayrollsDto.ID_Employee" class="form-control">
+                                <option value="">Seleccionar Empleado</option>
+                                @if (Model.Employees != null)
+                                {
+                                    @foreach (var employees in Model.Employees)
+                                    {
+                                        <option value="@employees.id">@employees.Name</option>
+                                    }
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="PayrollsDto.ID_Employee"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="PayrollsDto.PaymentDate">Fecha de Pago</label>
-                            <input readonly asp-for="PayrollsDto.PaymentDate" class="form-control" maxlength="45" />
+                            <input asp-for="PayrollsDto.PaymentDate" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="PayrollsDto.PaymentDate"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="PayrollsDto.Salary">Salario</label>
-                            <input readonly asp-for="PayrollsDto.Salary" class="form-control" maxlength="45" />
+                            <input asp-for="PayrollsDto.Salary" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="PayrollsDto.Salary"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="PayrollsDto.Bonuses">Bonos</label>
-                            <input readonly asp-for="PayrollsDto.Bonuses" class="form-control" maxlength="45" />
+                            <input asp-for="PayrollsDto.Bonuses" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="PayrollsDto.Bonuses"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="PayrollsDto.Deductions">Deducciones</label>
-                            <input readonly asp-for="PayrollsDto.Deductions" class="form-control" maxlength="45" />
+                            <input asp-for="PayrollsDto.Deductions" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="PayrollsDto.Deductions"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="PayrollsDto.HoursWorked">Horas Trabajadas</label>
-                            <input readonly asp-for="PayrollsDto.HoursWorked" class="form-control" maxlength="45" />
+                            <input asp-for="PayrollsDto.HoursWorked" class="form-control" maxlength="45"/>
+                            <span class="text-danger" asp-validation-for="PayrollsDto.HoursWorked"></span>
                         </div>
-                        
+                        @if (Model.Errors.Count > 0 && Model.Errors !=null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                <ul>
+                                    @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                                    {
+                                        <li>@error.ErrorMessage</li>
+                                    }
+                                </ul>
+                                
+                            </div>
+                        }
                         <div class="row">
                             <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-primary mr-3">Eliminar</button>
+                                <button type="submit" class="btn btn-primary mr-3">Guardar</button>
                                 <a asp-page="./List" class="btn btn-secondary">Cancelar</a>
                             </div>
                         </div>

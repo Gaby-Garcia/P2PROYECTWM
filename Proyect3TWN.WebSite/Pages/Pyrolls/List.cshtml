@@ -4,12 +4,10 @@
 <h1>Pyrolls</h1>
 <div class="container-fluid-pyrolls">
     <form method="get">
-        <div class="row">
-            <div class="col-md-8"></div>
-            <div class="col-md-4">
-                <br/>
-                <button id="btnSearch" class="btn btn-primary mr-3">Search</button>
-                <a asp-page="/Pyrolls/Add" class="btn btn-success">Add New</a>
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-4 text-center">
+                <button id="btnSearch" class="btn btn-primary mr-3" style=" background-color: #333">Search</button>
+                <a asp-page="/Pyrolls/Add" class="btn btn-success-new">Add New</a>
             </div>
         </div>
     </form>
@@ -20,7 +18,17 @@
             <div class="col-md-4 mb-3">
                 <div class="card-pyroll">
                     <div class="card-body-pyroll">
-                        <h5 class="card-title-pyroll">Employee ID: @pyroll.ID_Employee</h5>
+                        <h5 class="card-text-employee">
+                            <strong>Employee:</strong>
+                            @if (Model.Employees.ContainsKey(pyroll.ID_Employee))
+                            {
+                                @Model.Employees[pyroll.ID_Employee]
+                            }
+                            else
+                            {
+                                <span class="text-danger">Employee Not Found</span>
+                            }
+                        </h5>
                         <p class="card-text-pyroll"><strong>Payment Date:</strong> @pyroll.PaymentDate</p>
                         <p class="card-text-pyroll"><strong>Salary:</strong> @pyroll.Salary</p>
                         <p class="card-text-pyroll"><strong>Bonuses:</strong> @pyroll.Bonuses</p>
@@ -28,8 +36,8 @@
                         <p class="card-text-pyroll"><strong>Hours Worked:</strong> @pyroll.HoursWorked</p>
 
                         <div class="btn-group" role="group" aria-label="Options">
-                            <a asp-page="/Pyrolls/Edit" asp-route-id="@pyroll.id" class="btn btn-primary">Edit</a>
-                            <a asp-page="/Pyrolls/Delete" asp-route-id="@pyroll.id" class="btn btn-danger">Delete</a>
+                            <a asp-page="/Pyrolls/Edit" asp-route-id="@pyroll.id" class="btn btn-primary-list">Edit</a>
+                            <a asp-page="/Pyrolls/Delete" asp-route-id="@pyroll.id" class="btn btn-danger-list">Delete</a>
                         </div>
                     </div>
                 </div>

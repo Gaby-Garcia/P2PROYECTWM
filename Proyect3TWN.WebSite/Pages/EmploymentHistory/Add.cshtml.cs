@@ -8,28 +8,35 @@ namespace Proyect3TWN.WebSite.Pages.EmploymentHistory;
 
 public class Add : PageModel
 {
-    [BindProperty] public EmploymentHistoryDto EmploymentHistory { get; set; }
+    [BindProperty] public EmploymentHistoryDto EmploymentHistoryDto { get; set; }
+
+    public List<EmployeesDto> Employees { get; set; }
 
     public List<string> Errors { get; set; } = new List<string>();
     private readonly IEmploymentHistoryService _service;
+    private readonly IEmployeeService _employeeService;
 
-    public Add(IEmploymentHistoryService service)
+    public Add(IEmploymentHistoryService service, IEmployeeService employeeService)
     {
         _service = service;
+        _employeeService = employeeService;
     }
 
     public async Task<IActionResult> OnGet(int? id)
     {
-        EmploymentHistory = new EmploymentHistoryDto();
+        EmploymentHistoryDto = new EmploymentHistoryDto();
+        
+        var employee = await _employeeService.GetAllAsync();
+        Employees = employee.Data;
 
         if (id.HasValue)
         {
             //obtener informacion del servicio API
             var response = await _service.GetById(id.Value);
-            EmploymentHistory = response.Data;
+            EmploymentHistoryDto = response.Data;
         }
 
-        if (EmploymentHistory == null)
+        if (EmploymentHistoryDto == null)
         {
             return RedirectToPage("/Error");
         }
@@ -41,20 +48,34 @@ public class Add : PageModel
     {
         if (!ModelState.IsValid)
         {
+            var employee = await _employeeService.GetAllAsync();
+            Employees = employee.Data;
             return Page();
         }
 
         Response<EmploymentHistoryDto> response;
         
-        response = await _service.SaveAsync(EmploymentHistory);
-        Errors = response.Errors;
-
-        if (Errors.Count > 0)
-        {   
+        response = await _service.SaveAsync(EmploymentHistoryDto);
+        if (response == null )
+        {
+            ModelState.AddModelError("", "La respuesta del servicio es nula o no contiene datos válidos.");
+            var employee = await _employeeService.GetAllAsync();
+            Employees = employee.Data;
             return Page();
         }
-
-        EmploymentHistory = response.Data;
+        
+        if (response.Errors != null && response.Errors.Count > 0)
+        {
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+            
+            var employee = await _employeeService.GetAllAsync();
+            Employees = employee.Data;
+            return Page();
+        }
+        EmploymentHistoryDto = response.Data;
         return RedirectToPage("./List");
     }
 }

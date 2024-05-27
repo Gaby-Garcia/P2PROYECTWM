@@ -1,5 +1,5 @@
 ﻿@page
-@model Proyect3TWN.WebSite.Pages.Employees.Delete
+@model Proyect3TWN.WebSite.Pages.Employees.DeleteModel
 
 <style>
 
@@ -100,10 +100,9 @@
                             <input readonly asp-for="EmployeesDto.Email" class="form-control" maxlength="100" />
                         </div>
                         <div class="form-group">
-                            <label asp-for="EmployeesDto.ID_Department">ID Departamento</label>
-                            <input readonly asp-for="EmployeesDto.ID_Department" class="form-control" maxlength="100" />
+                            <label>Departamento</label>
+                            <input readonly value="@Model.DepartmentNames[Model.EmployeesDto.ID_Department]" class="form-control" />
                         </div>
-                        
                         <div class="row">
                             <div class="col-md-12 text-right">
                                 <button type="submit" class="btn btn-primary">Eliminar</button>

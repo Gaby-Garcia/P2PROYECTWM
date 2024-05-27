@@ -11,12 +11,10 @@
 <h1>Employment History</h1>
 <div class="container-fluid-employment-history">
     <form method="get">
-        <div class="row">
-            <div class="col-md-8"></div>
-            <div class="col-md-4">
-                <br/>
-                <button id="btnSearch" class="btn btn-primary mr-3">Search</button>
-                <a asp-page="/EmploymentHistory/Add" class="btn btn-success">Add New</a>
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-4 text-center">
+                <button id="btnSearch" class="btn btn-primary mr-3" style=" background-color: #333">Search</button>
+                <a asp-page="/EmploymentHistory/Add" class="btn btn-success-new">Add New</a>
             </div>
         </div>
     </form>
@@ -27,15 +25,25 @@
             <div class="col-md-4 mb-3">
                 <div class="card-employment-history">
                     <div class="card-body-employment-history">
-                        <h5 class="card-title-employment-history">Employee ID: @eHistory.ID_Employee</h5>
+                           <p class="card-text-employee">
+                               <strong>Employee:</strong>
+                               @if (Model.EmployeeName.ContainsKey(eHistory.ID_Employee))
+                               {
+                                   @Model.EmployeeName[eHistory.ID_Employee]
+                               }
+                               else
+                               {
+                                   <span class="text-danger">Employee Not Found</span>
+                               }
+                           </p>
                         <p class="card-text-employment-history"><strong>Company Name:</strong> @eHistory.CompanyName</p>
                         <p class="card-text-employment-history"><strong>Position:</strong> @eHistory.CompanyPosition</p>
                         <p class="card-text-employment-history"><strong>Description:</strong> @eHistory.Description</p>
                         <p class="card-text-employment-history"><strong>Quit Work:</strong> @eHistory.QuitWork</p>
 
                         <div class="btn-group" role="group" aria-label="Options">
-                            <a asp-page="/EmploymentHistory/Edit" asp-route-id="@eHistory.id" class="btn btn-primary">Edit</a>
-                            <a asp-page="/EmploymentHistory/Delete" asp-route-id="@eHistory.id" class="btn btn-danger">Delete</a>
+                            <a asp-page="/EmploymentHistory/Edit" asp-route-id="@eHistory.id" class="btn btn-primary-list">Edit</a>
+                            <a asp-page="/EmploymentHistory/Delete" asp-route-id="@eHistory.id" class="btn btn-danger-list">Delete</a>
                         </div>
                     </div>
                 </div>

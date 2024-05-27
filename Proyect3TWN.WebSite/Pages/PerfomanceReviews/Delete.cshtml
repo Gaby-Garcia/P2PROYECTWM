@@ -64,8 +64,8 @@
                     <form method="post">
                         <input type="hidden" asp-for="PerfomanceReviewsDto.id" />
                         <div class="form-group">
-                            <label asp-for="PerfomanceReviewsDto.ID_Employee">ID de Empleado</label>
-                            <input readonly asp-for="PerfomanceReviewsDto.ID_Employee" class="form-control" maxlength="45" />
+                            <label>Empleado</label>
+                            <input readonly value="@Model.EmployeeName[Model.PerfomanceReviewsDto.ID_Employee]" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label asp-for="PerfomanceReviewsDto.EvaluationDate">Fecha de Evaluación</label>

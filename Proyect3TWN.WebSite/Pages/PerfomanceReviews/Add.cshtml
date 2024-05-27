@@ -72,8 +72,17 @@
                     <form method="post">
                         <input type="hidden"/>
                         <div class="form-group">
-                            <label asp-for="PerfomanceReviewsDto.ID_Employee">ID de Empleado</label>
-                            <input asp-for="PerfomanceReviewsDto.ID_Employee" class="form-control" maxlength="45"/>
+                            <label asp-for="PerfomanceReviewsDto.ID_Employee">Empleado</label>
+                            <select asp-for="PerfomanceReviewsDto.ID_Employee" class="form-control">
+                                <option value="">Seleccionar Empleado</option>
+                                @if (Model.Employees != null)
+                                {
+                                    @foreach (var employee in Model.Employees)
+                                    {
+                                        <option value="@employee.id">@employee.Name</option>
+                                    }
+                                }
+                            </select>
                             <span class="text-danger" asp-validation-for="PerfomanceReviewsDto.ID_Employee"></span>
                         </div>
                         <div class="form-group">
@@ -97,15 +106,16 @@
                             <span class="text-danger" asp-validation-for="PerfomanceReviewsDto.Goals"></span>
                         </div>
                         
-                        @if (Model.Errors.Count > 0)
+                        @if (Model.Errors.Count > 0 && Model.Errors !=null)
                         {
                             <div class="alert alert-danger" role="alert">
                                 <ul>
-                                    @foreach (var error in Model.Errors)
-                                    {           
-                                        <li>@error</li>
+                                    @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                                    {
+                                        <li>@error.ErrorMessage</li>
                                     }
                                 </ul>
+                                
                             </div>
                         }
                         

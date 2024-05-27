@@ -4,13 +4,11 @@
 <h1>Employees</h1>
 <div class="container-fluid-employees">
     <form method="get">
-        <div class="row">
-            <div class="col-md-8"></div>
-            <div class="col-md-4">
-                <br/>
-                <button id="btnSearch" class="btn btn-primary mr-3">Search</button>
-                <a asp-page="/Employees/Add" class="btn btn-success">Add New</a>
-            </div>
+     <div class="row justify-content-center mb-4">
+         <div class="col-md-4 text-center">
+             <button id="btnSearch" class="btn btn-primary mr-3">Search</button>
+             <a asp-page="/Employees/Add" class="btn btn-success-new">Add New</a>
+         </div>
         </div>
     </form>
 
@@ -26,10 +24,20 @@
                         <p class="card-text-employee"><strong>Address:</strong> @employee.Address</p>
                         <p class="card-text-employee"><strong>Phone:</strong> @employee.Phone</p>
                         <p class="card-text-employee"><strong>Email:</strong> @employee.Email</p>
-                        <p class="card-text-employee"><strong>Department ID:</strong> @employee.ID_Department</p>
+                        <p class="card-text-employee">
+                            <strong>Department:</strong>
+                            @if (Model.DepartmentNames.ContainsKey(employee.ID_Department))
+                            {
+                                @Model.DepartmentNames[employee.ID_Department]
+                            }
+                            else
+                            {
+                                <span class="text-danger">Department Not Found</span>
+                            }
+                        </p>
                         <div class="btn-group" role="group" aria-label="Options">
-                            <a asp-page="/Employees/Edit" asp-route-id="@employee.id" class="btn btn-primary">Edit</a>
-                            <a asp-page="/Employees/Delete" asp-route-id="@employee.id" class="btn btn-danger">Delete</a>
+                            <a asp-page="/Employees/Edit" asp-route-id="@employee.id" class="btn btn-primary-list">Edit</a>
+                            <a asp-page="/Employees/Delete" asp-route-id="@employee.id" class="btn btn-danger-list">Delete</a>
                         </div>
                     </div>
                 </div>

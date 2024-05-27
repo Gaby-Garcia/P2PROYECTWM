@@ -11,16 +11,32 @@
 }
 
 .btn-success-new{
-    background-color: #81bece;
+    background-color: #333;
+    color: #fff;
+    border-radius: 25px; /* Botones redondeados */
+    margin-right: 10px; /* Espacio entre botones */
+    align-content: center;
+}
+
+.btn-primary-search{
+    border-radius: 25px; /* Botones redondeados */
+    margin-right: 10px; /* Espacio entre botones */
+    align-content: center;
+    background-color: #333
 }
 
 .btn-danger-list{
     background-color: #ff7c70;
+    border-radius: 25px; /* Botones redondeados */
+    margin-right: 10px; /* Espacio entre botones */
 }
 
 .btn-primary-list{
     background-color: #81bece;
+    border-radius: 25px; /* Botones redondeados */
+    margin-right: 10px; /* Espacio entre botones */
 }
+
 
 .card-department {
     border: none;

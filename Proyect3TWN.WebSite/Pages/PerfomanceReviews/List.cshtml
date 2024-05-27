@@ -1,51 +1,91 @@
 ﻿@page
 @model Proyect3TWN.WebSite.Pages.PerfomanceReviews.List
 
+<style>
+    .table-container {
+        margin-top: 20px;
+        background: #81bece;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    .table th, .table td {
+        vertical-align: middle;
+    }
+    .table thead th {
+        background-color: #f8f9fa;
+    }
+    .btn-primary-search, .btn-success-add {
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+    }
+    .btn-primary-search:hover, .btn-success-add:hover {
+        opacity: 0.8;
+    }
+    .btn-group .btn {
+        margin-right: 5px;
+    }
+    h5 {
+        text-align: center; /* Centrar el texto */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Estilo de fuente */
+        color: #333; /* Color del texto */
+        text-transform: uppercase; /* Convertir el texto a mayúsculas */
+        letter-spacing: 2px; /* Espaciado entre letras */
+        margin-top: 50px; /* Espacio superior */
+        margin-bottom: 30px; /* Espacio inferior */
+    }
+</style>
+
+<h5>Performance Reviews</h5>
 <div class="container-fluid">
     <form method="get">
-        <div class = "row">
-            <div class = "col-md-8"></div>
-            <div class = "col-md-4">
-                <br/>
-                <button id = "btnSearch" class="btn btn-primary mr-3" >Search</button>
-                <a asp-page="/PerfomanceReviews/Add" class="btn btn-success"> Add New</a>
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-4 text-center">
+                <button id="btnSearch" class="btn btn-primary-search mr-3">Search</button>
+                <a asp-page="/PerfomanceReviews/Add" class="btn btn-success-add">Add New</a>
             </div>
         </div>
     </form>
-    
-    
+
     <div class="row">
         <div class="col-md-1"></div>
-        
+
         <div class="col-10">
-            <table class="table">
-                <tr>
-                    <th>ID_Employee</th>
-                    <th>Evaluation Date</th>
-                    <th>Clasification</th>
-                    <th>Comments</th>
-                    <th>Goals</th>
-                    <th></th>
-                </tr>
-                @foreach (var perfomance in @Model.PerfomanceReview)
-                {
-                    <tr>
-                        <td>@perfomance.ID_Employee</td>
-                        <td>@perfomance.EvaluationDate</td>
-                        <td>@perfomance.Clasification</td>
-                        <td>@perfomance.Comments</td>
-                        <td>@perfomance.Goals</td>
-                        <td>
-                            <a a-asp-area="" asp-page="/PerfomanceReviews/Edit" asp-route-id="@perfomance.id"
-                               class="btn btn-primary" role="button">Edit</a>
-                            <a a-asp-area="" asp-page="/PerfomanceReviews/Delete" asp-route-id="@perfomance.id"
-                               class="btn btn-danger" role="button">Delete</a>
-                        </td>
-                    </tr>
-                }
-            </table>
+            <div class="table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>Evaluation Date</th>
+                            <th>Classification</th>
+                            <th>Comments</th>
+                            <th>Goals</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var perfomance in @Model.PerfomanceReview)
+                        {
+                            <tr>
+                                <td>@Model.EmployeeName[perfomance.ID_Employee]</td>
+                                <td>@perfomance.EvaluationDate.ToString("dd/MM/yyyy")</td>
+                                <td>@perfomance.Clasification</td>
+                                <td>@perfomance.Comments</td>
+                                <td>@perfomance.Goals</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-area="" asp-page="/PerfomanceReviews/Edit" asp-route-id="@perfomance.id" class="btn btn-primary" role="button">Edit</a>
+                                        <a asp-area="" asp-page="/PerfomanceReviews/Delete" asp-route-id="@perfomance.id" class="btn btn-danger" role="button">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
+
         <div class="col-md-1"></div>
     </div>
-    
 </div>

@@ -9,18 +9,26 @@ namespace Proyect3TWN.WebSite.Pages.PerfomanceReviews;
 public class Add : PageModel
 {
     [BindProperty] public PerfomanceReviewsDto PerfomanceReviewsDto { get; set; }
+    
+    public List<EmployeesDto> Employees { get; set; }
 
     public List<string> Errors { get; set; } = new List<string>();
     private readonly IPerfomanceReviewService _service;
+    private readonly IEmployeeService _employeeService;
 
-    public Add(IPerfomanceReviewService service)
+
+    public Add(IPerfomanceReviewService service, IEmployeeService employeeService)
     {
         _service = service;
+        _employeeService = employeeService;
     }
 
     public async Task<IActionResult> OnGet(int? id)
     {
         PerfomanceReviewsDto = new PerfomanceReviewsDto();
+        
+        var employee = await _employeeService.GetAllAsync();
+        Employees = employee.Data;
 
         if (id.HasValue)
         {
@@ -41,16 +49,31 @@ public class Add : PageModel
     {
         if (!ModelState.IsValid)
         {
+            var employee = await _employeeService.GetAllAsync();
+            Employees = employee.Data;
             return Page();
         }
 
         Response<PerfomanceReviewsDto> response;
         
         response = await _service.SaveAsync(PerfomanceReviewsDto);
-        Errors = response.Errors;
+        if (response == null || response.Data == null)
+        {
+            ModelState.AddModelError("", "La respuesta del servicio es nula o no contiene datos válidos.");
+            var employee = await _employeeService.GetAllAsync();
+            Employees = employee.Data;
+            return Page();
+        }
 
-        if (Errors.Count > 0)
-        {   
+       
+        if (response.Errors != null && response.Errors.Count > 0)
+        {
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+            var employee = await _employeeService.GetAllAsync();
+            Employees = employee.Data;
             return Page();
         }
 

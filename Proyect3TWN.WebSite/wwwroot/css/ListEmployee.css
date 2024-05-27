@@ -1,7 +1,6 @@
 ﻿/* Estilos personalizados para el formulario y los cards */
 .container-fluid-employees {
     padding-top: 20px;
-    background: linear-gradient(to bottom right, #e0f7fa, #b3e5fc); /* Fondo degradado de azul pastel */
 }
 
 .btn-primary,
@@ -11,12 +10,39 @@
     margin-right: 10px; /* Espacio entre botones */
 }
 
+.btn-success{
+    background-color: #333;
+    color: #fff;
+    border-radius: 25px; /* Botones redondeados */
+    margin-right: 10px; /* Espacio entre botones */
+    align-content: center;
+}
+
+.btn-primary-search{
+    border-radius: 25px; /* Botones redondeados */
+    margin-right: 10px; /* Espacio entre botones */
+    align-content: center;
+}
+
+.btn-danger-list{
+    background-color: #ff7c70;
+    border-radius: 25px; /* Botones redondeados */
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.btn-primary-list{
+    background-color: #81bece;
+    border-radius: 25px; /* Botones redondeados */
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+
 .card-employee {
     border: none;
     border-radius: 20px; /* Esquinas redondeadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px; /* Espacio entre cards */
-    background-color: #ffffff; /* Fondo blanco para el card */
+    background-color: #dcdcdc; /* Fondo blanco para el card */
     min-height: 300px; /* Altura mínima para los cards */
     display: flex;
     flex-direction: column;
@@ -34,7 +60,7 @@
 }
 
 .card-text-employee {
-    color: #6c757d;
+    color: #333;
     margin-bottom: 10px;
     font-size: 0.9rem; /* Tamaño de texto más pequeño */
 }

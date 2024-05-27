@@ -9,18 +9,25 @@ namespace Proyect3TWN.WebSite.Pages.Employees;
 public class Edit : PageModel
 {
     [BindProperty] public EmployeesDto EmployeesDto { get; set; }
+    public List<DepartmentDto> Departments { get; set; }
 
     public List<string> Errors { get; set; } = new List<string>();
     private readonly IEmployeeService _service;
+    private readonly IDepartmentService _departmentService;
 
-    public Edit(IEmployeeService service)
+
+    public Edit(IEmployeeService service, IDepartmentService departmentService)
     {
         _service = service;
+        _departmentService = departmentService;
     }
 
     public  async Task<IActionResult> OnGet(int? id)
     {
         EmployeesDto = new EmployeesDto();
+        
+        var departmentResponse = await _departmentService.GetAllAsync();
+        Departments = departmentResponse.Data;
 
         if (id.HasValue)
         {
@@ -41,6 +48,9 @@ public class Edit : PageModel
     {
         if (!ModelState.IsValid)
         {
+            // Recargar los departamentos si hay errores de validación
+            var departmentResponse = await _departmentService.GetAllAsync();
+            Departments = departmentResponse.Data;
             return Page();
         }
 
@@ -58,9 +68,23 @@ public class Edit : PageModel
             //Insercion
             response = await _service.SaveAsync(EmployeesDto);
         }
-
-        if (Errors.Count > 0)
+        
+        if (response == null )
         {
+            ModelState.AddModelError("", "La respuesta del servicio es nula o no contiene datos válidos.");
+            var departmentResponse = await _departmentService.GetAllAsync();
+            Departments = departmentResponse.Data;
+            return Page();
+        }
+        if (response.Errors != null && response.Errors.Count > 0)
+        {
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+            // Recargar los departamentos
+            var departmentResponse = await _departmentService.GetAllAsync();
+            Departments = departmentResponse.Data;
             return Page();
         }
 
