@@ -14,13 +14,40 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/Proyect3TWN.WebSite.styles.css" asp-append-version="true"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="~/css/custom-menu.css"/> <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/custom-menu.css"/> 
     <link rel="stylesheet" href="~/css/ListDepartment.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/ListEmployee.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/ListEmployment.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/ListPyrolls.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/ListUsers.css" asp-append-version="true"/>
-
+    
+    <link rel="stylesheet" href="~/css/Department/AddDepartment.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/Department/DeleteDepartment.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/Department/EditDepartment.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/Department/ListDepartment.css" asp-append-version="true"/>
+    
+    <link rel="stylesheet" href="~/css/Employee/AddEmployee.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/Employee/DeleteEmployee.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/Employee/EditEmployee.css" asp-append-version="true"/>
+    
+    <link rel="stylesheet" href="~/css/EmploymentHistory/AddEmployment.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/EmploymentHistory/EditEmployment.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/EmploymentHistory/DeleteEmployment.css" asp-append-version="true"/>
+    
+    <link rel="stylesheet" href="~/css/PerfomanceReview/AddP.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/PerfomanceReview/EditP.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/PerfomanceReview/DeleteP.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/PerfomanceReview/TablePerfomance.css" asp-append-version="true"/>
+    
+    <link rel="stylesheet" href="~/css/Pyrolls/AddPayrolls.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/Pyrolls/EditPayrolls.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/Pyrolls/DeletePayrolls.css" asp-append-version="true"/>
+    
+    <link rel="stylesheet" href="~/css/VacationsAbsences/Table.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/VacationsAbsences/AddVA.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/VacationsAbsences/DeleteVA.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/VacationsAbsences/EditVA.css" asp-append-version="true"/>
+    
 </head>
 <body>
  @if (!isLoginPage)
@@ -39,9 +66,6 @@
         <nav class="nav flex-column">
             <a class="nav-link" asp-area="" asp-page="/Index">
                 <i class="bi bi-house-door"></i> Home
-            </a>
-            <a class="nav-link" asp-area="" asp-page="/Users/List">
-                <i class="bi bi-person"></i> Users
             </a>
             <a class="nav-link" asp-area="" asp-page="/Employees/List">
                 <i class="bi bi-people"></i> Employees
@@ -74,8 +98,8 @@
     </main>
 </div>
 <footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2024 - Proyect3TWN.WebSite - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <div class="container" style="color: #fff">
+        &copy; 2024 - Proyect3TWN.WebSite -
     </div>
 </footer>
 

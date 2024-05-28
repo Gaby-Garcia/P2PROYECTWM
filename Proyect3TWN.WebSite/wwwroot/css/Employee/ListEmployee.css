@@ -1,0 +1,80 @@
+﻿.container-fluid-employees {
+    padding-top: 20px;
+}
+
+.btn-primary,
+.btn-success,
+.btn-danger {
+    border-radius: 25px;
+    margin-right: 10px; 
+}
+
+.btn-success{
+    background-color: #333;
+    color: #fff;
+    border-radius: 25px; 
+    margin-right: 10px; 
+    align-content: center;
+}
+
+.btn-primary-search{
+    border-radius: 25px; 
+    margin-right: 10px; 
+    align-content: center;
+}
+
+.btn-danger-list{
+    background-color: #ff7c70;
+    border-radius: 25px; 
+    margin-right: 10px; 
+}
+
+.btn-primary-list{
+    background-color: #81bece;
+    border-radius: 25px; 
+    margin-right: 10px;
+}
+
+
+.card-employee {
+    border: none;
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
+    background-color: #dcdcdc; 
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body-employee {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-title-employee {
+    font-size: 1.25rem; 
+    margin-bottom: 10px;
+}
+
+.card-text-employee {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center; 
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

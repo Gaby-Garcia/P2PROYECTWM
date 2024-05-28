@@ -55,13 +55,13 @@ namespace Proyect3TWN.WebSite.Pages.Employees;
                 Departments = departmentResponse.Data;
                 return Page();
             }
+            Response<EmployeesDto> response;
 
-            var response = await _service.SaveAsync(EmployeesDto);
+            response = await _service.SaveAsync(EmployeesDto);
 
             if (response == null )
             {
                 ModelState.AddModelError("", "La respuesta del servicio es nula o no contiene datos válidos.");
-                // Recargar los departamentos
                 var departmentResponse = await _departmentService.GetAllAsync();
                 Departments = departmentResponse.Data;
                 return Page();

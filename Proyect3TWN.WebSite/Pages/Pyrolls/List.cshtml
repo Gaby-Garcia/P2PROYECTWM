@@ -1,12 +1,13 @@
 ﻿@page
 @model Proyect3TWN.WebSite.Pages.Pyrolls.List
-
+<head>
+    <link rel="stylesheet" href="~/css/Pyrolls/ListPyrolls.css" asp-append-version="true"/>
+</head>
 <h1>Pyrolls</h1>
 <div class="container-fluid-pyrolls">
     <form method="get">
         <div class="row justify-content-center mb-4">
             <div class="col-md-4 text-center">
-                <button id="btnSearch" class="btn btn-primary mr-3" style=" background-color: #333">Search</button>
                 <a asp-page="/Pyrolls/Add" class="btn btn-success-new">Add New</a>
             </div>
         </div>

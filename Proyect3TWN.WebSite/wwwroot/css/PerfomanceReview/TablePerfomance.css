@@ -1,0 +1,33 @@
+﻿.table-container {
+    margin-top: 20px;
+    background: #81bece;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.table th, .table td {
+    vertical-align: middle;
+}
+.table thead th {
+    background-color: #f8f9fa;
+}
+.btn-primary-search, .btn-success-add {
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+.btn-primary-search:hover, .btn-success-add:hover {
+    opacity: 0.8;
+}
+.btn-group .btn {
+    margin-right: 5px;
+}
+h5 {
+    text-align: center; /* Centrar el texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Estilo de fuente */
+    color: #333; /* Color del texto */
+    text-transform: uppercase; /* Convertir el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-top: 50px; /* Espacio superior */
+    margin-bottom: 30px; /* Espacio inferior */
+}

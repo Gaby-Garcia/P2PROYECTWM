@@ -1,62 +1,8 @@
 ﻿@page
 @model Proyect3TWN.WebSite.Pages.VacationsAbsences.Add
-
-<style>
-
-    .card {
-        border: none;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-header {
-        background-color: #007bff; /* Color de fondo del encabezado azul */
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        color: white;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .card-body {
-        padding: 40px;
-    }
-
-    .form-group {
-        margin-bottom: 30px;
-    }
-
-    .form-control {
-        border-radius: 15px;
-    }
-
-    .btn-primary {
-        background-color: #007bff; /* Color de fondo del botón primario azul */
-        border-color: #007bff;
-        border-radius: 15px;
-    }
-
-    .btn-primary:hover {
-        background-color: #0056b3; /* Cambio de color al pasar el ratón */
-        border-color: #0056b3;
-    }
-
-    .btn-secondary {
-        background-color: #6c757d; /* Color de fondo del botón secundario */
-        border-color: #6c757d;
-        border-radius: 15px;
-    }
-
-    .btn-secondary:hover {
-        background-color: #565e64; /* Cambio de color al pasar el ratón */
-        border-color: #565e64;
-    }
-
-    .text-danger {
-        font-size: 0.875em;
-    }
-</style>
-
+<head>
+    <link rel="stylesheet" href="~/css/VacationsAbsences/AddVA.css" asp-append-version="true"/>
+</head>
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -115,7 +61,7 @@
                         <div class="row">
                             <div class="col-md-12 text-right">
                                 <button type="submit" class="btn btn-primary mr-3">Save</button>
-                                <a class="btn btn-secondary">Cancel</a>
+                                <a class="btn btn-secondary" a asp-page="/VacationsAbsences/List">Cancel</a>
                             </div>
                         </div>
                     </form>
